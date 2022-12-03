@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from "react";
+import { Home } from "./components/Home/Home";
+import Login from "./components/Login/Login";
+import MainHeader from "./components/MainHeader/MainHeader";
+import AuthContext from "./store/auth-context";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Reclamos from "./components/Reclamos/Reclamos";
 
 function App() {
+  const ctx = useContext(AuthContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="container">
+        <MainHeader />
+        <main>
+          {!ctx.isLoggedIn && <Login />}
+          {ctx.isLoggedIn && (
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/reclamos" element={<Reclamos />} />
+            </Routes>
+          )}
+        </main>
+      </div>
+    </Router>
   );
 }
 
