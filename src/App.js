@@ -7,6 +7,13 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Reclamos from "./components/Reclamos/Reclamos";
 import NuevoReclamo from "./components/Reclamos/NuevoReclamo";
+import CrearEdificio from "./pages/edificio/CrearEdificio";
+import ListaEdificios from "./pages/edificio/ListaEdificios";
+import EditarEdificio from "./pages/edificio/EditarEdificio";
+import UnidadesEdificio from "./pages/unidad/UnidadesEdificio";
+import ListarPersonas from "./pages/persona/ListarPersonas";
+
+
 
 function App() {
   const ctx = useContext(AuthContext);
@@ -22,6 +29,29 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/reclamos" element={<Reclamos />} />
               <Route exact path="/reclamo" element={<NuevoReclamo />} />
+
+              <Route exact path="/crearEdificio" element={<CrearEdificio />} />
+              <Route
+                exact
+                path="/listaEdificios"
+                element={<ListaEdificios />}
+              />
+              <Route
+                exact
+                path="/edificio/:codigo"
+                element={<EditarEdificio />}
+              />
+              <Route
+                exact
+                path="/edificio/:codigo/unidad"
+                element={<UnidadesEdificio />}
+              />
+
+              <Route
+                exact
+                path="/edificio/:codigo/unidad/persona/:identificador/:codigo/:piso/:numero"
+                element={<ListarPersonas />}
+              />
             </Routes>
           )}
         </main>
