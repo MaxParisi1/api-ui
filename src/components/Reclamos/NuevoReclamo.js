@@ -154,7 +154,13 @@ function NuevoReclamo() {
       {reclamosComunView && (
         <div
           className="w-100 w-md-50"
-          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%" }}
+          style={{
+            textAlignLast: "left",
+            marginTop: "3%",
+            marginBottom: "4%",
+            justifyContent: "center",
+            textAlignLast: "center",
+          }}
         >
           <NormalButton
             onClickFuncion={() => {
@@ -229,25 +235,36 @@ function NuevoReclamo() {
       )}
       {reclamosView && (
         <div
-          className="w-md-50 d-flex text-center"
+          className="d-flex text-center"
           style={{
             textAlignLast: "left",
             marginTop: "3%",
             marginBottom: "4%",
-            textAlignLast: "center",
-            width: "60%",
+            justifyContent: "center",
           }}
         >
-          <NormalButton
-            onClickFuncion={() => {
-              setReclamosCreate(true);
-              setReclamosView(false);
-            }}
-            accion={"Crear nuevo Reclamo"}
-          />
-          <NormalButton accion={"Ver todos mis reclamos"}>
-            <Link to="/reclamos"></Link>
-          </NormalButton>
+          <div style={{ textAlignLast: "right" }}>
+            <NormalButton
+              onClickFuncion={() => {
+                setReclamosCreate(true);
+                setReclamosView(false);
+              }}
+              accion={"Crear nuevo Reclamo"}
+            />
+          </div>
+
+          <div style={{ textAlignLast: "left" }}>
+            <NormalButton accion={"Ver todos mis reclamos"}>
+              <Link to="/reclamos" className="text-decoration-none">
+                <a
+                  className="text-decoration-none text-dark"
+                  style={{ color: "var(--bs-dropdown-link-color)" }}
+                >
+                  Ver todos mis reclamos
+                </a>
+              </Link>
+            </NormalButton>
+          </div>
         </div>
       )}
       {reclamosView && reclamos && (

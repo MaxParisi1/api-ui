@@ -25,19 +25,19 @@ const MainHeader = () => {
           Infinity
         </div>
 
-        {ctx.isLoggedIn && (
-          <div className=" text-center p-1">
-            {ctx.isAdmin && <NavigationAdmin />}
-            {!ctx.isAdmin && <Navigation />}
-            <button
-              type="button"
-              className="btn btn-outline-dark btn-sm mx-1"
-              onClick={handleShow}
-            >
-              Cerrar sesion
-            </button>
-          </div>
-        )}
+        {/* {ctx.isLoggedIn && ( */}
+        <div className=" text-center p-1">
+          {ctx.isAdmin && <NavigationAdmin />}
+          {!ctx.isAdmin && <Navigation />}
+          <button
+            type="button"
+            className="btn btn-outline-dark btn-sm mx-1"
+            onClick={handleShow}
+          >
+            Cerrar sesion
+          </button>
+        </div>
+        {/* )} */}
 
         {/* Modal para cerrar sesion */}
         <Modal
@@ -56,7 +56,10 @@ const MainHeader = () => {
           </Modal.Header>
           <Modal.Footer class="modal-footer">
             <button
-              onClick={ctx.onLogout}
+              onClick={() => {
+                ctx.onLogout();
+                handleClose();
+              }}
               type="button"
               class="btn btn-outline-secondary"
               data-bs-dismiss="modal"
