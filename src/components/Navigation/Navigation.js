@@ -7,14 +7,8 @@ const Navigation = () => {
   return (
     <>
       <button type="button" className="btn btn-outline-dark btn-sm mx-1">
-        <Link to="/" className="text-decoration-none">
-          <a
-            className="text-decoration-none text-dark"
-            href="../../index.html"
-            style={{ color: "var(--bs-dropdown-link-color)" }}
-          >
-            Home
-          </a>
+        <Link to="/" className="text-decoration-none" style={{ color: "var(--bs-dropdown-link-color)" }}> 
+          Home
         </Link>
       </button>
 

@@ -52,7 +52,7 @@ const Login = () => {
     <div className="p-1 ">
       <Form
         className="container-sm p-5 mt-5"
-        style={{ maxWidth: "760px", border: "solid 2px #DEB887" }}
+        style={{ maxWidth: "760px", border: "solid 2px #519657" }}
         name="normal_login"
         initialValues={{
           remember: true,
@@ -113,7 +113,7 @@ const Login = () => {
             <button
               type="submit"
               className="btn fw-semibold mt-5"
-              style={{ borderColor: "#DEB887", color: "#DEB887" }}
+              style={{ borderColor: "#519657", color: "#519657" }}
             >
               Enviar
             </button>

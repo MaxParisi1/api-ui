@@ -3,12 +3,12 @@ import React from "react";
 const ReclamoCard = (props) => {
   return (
     <div
-      className="card  mb-3 m-4"
-      style={{ maxWidth: "18rem", border: "solid 2px #DEB887" }}
+      className="card m-4"
+      style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
     >
       <div
         className="card-header"
-        style={{ borderBottom: "solid 1px #DEB887" }}
+        style={{ borderBottom: "solid 1px #519657" }}
       >
         Nro de Reclamo: {props.id}
       </div>
@@ -22,10 +22,10 @@ const ReclamoCard = (props) => {
         <p className="card-text">Depto: {props.identificador}</p>
       </div>
       <div className="card-body">
-        <p className="card-text">ubicacion: {props.ubicacion}</p>
+        <p className="card-text">Ubicación: {props.ubicacion}</p>
       </div>
       <div className="card-body">
-        <p className="card-text">Descripcion: {props.descripcion}</p>
+        <p className="card-text">Descripción: {props.descripcion}</p>
       </div>
       <div className="card-body">
         <p className="card-text">Estado: {props.estado}</p>

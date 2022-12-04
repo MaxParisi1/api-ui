@@ -8,6 +8,7 @@ import { useContext } from "react";
 import axios from "axios";
 import AuthContext from "../../store/auth-context";
 import reclamoServicio from "../../services/reclamoServicio";
+import Form from 'react-bootstrap/Form';
 
 const items = [
   {
@@ -78,25 +79,32 @@ const Reclamos = () => {
         </h1>
 
         <h4 className="p-2">
-          <i className="bi bi-funnel"></i>Filtrar por:
+
+            <Dropdown
+              menu={{
+              items,
+              selectable: true,
+              defaultSelectedKeys: ["1"],
+              onClick,
+              }}
+              >
+              <Typography.Link className="d-flex w-50" style={{color: "black"}}>
+                
+                <h4><i className="bi bi-funnel"></i>
+                  Filtrar por estado:     <i class="bi bi-chevron-down" style={{verticalAlign: "middle"}}></i>
+                </h4>
+
+                <Space className="" >
+                  <h5>{estado}</h5>
+                  
+                  
+                </Space>
+              </Typography.Link>
+          </Dropdown>
         </h4>
-        <Dropdown
-          menu={{
-            items,
-            selectable: true,
-            defaultSelectedKeys: ["1"],
-            onClick,
-          }}
-        >
-          <Typography.Link>
-            <Space>
-              Estado: {estado}
-              <DownOutlined />
-            </Space>
-          </Typography.Link>
-        </Dropdown>
+
       </div>
-      <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+      <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 justify-content-center">
         {estado !== ""
           ? reclamos
               .filter((reclamo) => reclamo.estado === estado)
@@ -110,8 +118,8 @@ const Reclamos = () => {
                   identificador={reclamo.identificador}
                   estado={reclamo.estado}
                 />
-              ))
-          : reclamos.map((reclamo) => (
+              )) 
+          : reclamos.map((reclamo) => ( 
               <ReclamoCard
                 key={reclamo.idReclamo}
                 id={reclamo.idReclamo}
@@ -121,7 +129,7 @@ const Reclamos = () => {
                 identificador={reclamo.identificador}
                 estado={reclamo.estado}
               />
-            ))}
+             ))} 
       </div>
     </div>
   );

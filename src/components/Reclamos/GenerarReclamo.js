@@ -39,7 +39,7 @@ const GenerarReclamo = (props) => {
     <div className="p-2">
       <form
         className="p-5 container mt-5"
-        style={{ maxWidth: "760px", border: "solid 2px #DEB887" }}
+        style={{ maxWidth: "760px", border: "solid 2px #519657" }}
         onSubmit={handleEnviar}
       >
         <h1 className="text-lg-start text-bold">Generá tu reclamo</h1>
@@ -111,7 +111,7 @@ const GenerarReclamo = (props) => {
         <button
           type="submit"
           className="btn fw-semibold mt-5"
-          style={{ borderColor: "#DEB887", color: "#DEB887" }}
+          style={{ borderColor: "#519657", color: "#519657" }}
         >
           Enviar
         </button>

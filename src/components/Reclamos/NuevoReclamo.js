@@ -137,6 +137,18 @@ function NuevoReclamo() {
             ))}
         </ContainerCards>
       )}
+      {reclamosView && (
+        <div className="w-100 w-md-50" style={{textAlignLast: "left", marginTop: "3%", marginBottom: "4%"}}>
+          <NormalButton
+            onClickFuncion={() => {
+              setReclamosCreate(true);
+              setReclamosView(false);
+            }}
+            accion={"Crear nuevo Reclamo"}
+          />
+        </div>
+        
+      )}
       {reclamosView && reclamos && (
         <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
           {reclamos.map((reclamo) => (
@@ -152,15 +164,7 @@ function NuevoReclamo() {
           ))}
         </div>
       )}
-      {reclamosView && (
-        <NormalButton
-          onClickFuncion={() => {
-            setReclamosCreate(true);
-            setReclamosView(false);
-          }}
-          accion={"Crear nuevo Reclamo"}
-        />
-      )}
+      
       {reclamosCreate && (
         <GenerarReclamo
           unidad={unidades.find(
