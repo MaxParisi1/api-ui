@@ -13,22 +13,21 @@ const ReclamoCard = (props) => {
         Nro de Reclamo: {props.id}
       </div>
       <div className="card-body">
-        <p className="card-text">Edificio: {props.edificio}</p>
+        <p className="card-text">{props.edificio}</p>
+      </div>
+      {props.identificador && (
+        <div className="card-body">
+          <p className="card-text">{props.identificador}</p>
+        </div>
+      )}
+      <div className="card-body">
+        <p className="card-text">{props.ubicacion}</p>
       </div>
       <div className="card-body">
-        <p className="card-text">Piso: {props.identificador}</p>
+        <p className="card-text">{props.descripcion}</p>
       </div>
       <div className="card-body">
-        <p className="card-text">Depto: {props.identificador}</p>
-      </div>
-      <div className="card-body">
-        <p className="card-text">Ubicación: {props.ubicacion}</p>
-      </div>
-      <div className="card-body">
-        <p className="card-text">Descripción: {props.descripcion}</p>
-      </div>
-      <div className="card-body">
-        <p className="card-text">Estado: {props.estado}</p>
+        <p className="card-text">{props.estado}</p>
       </div>
     </div>
   );

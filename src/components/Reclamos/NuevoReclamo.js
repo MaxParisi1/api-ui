@@ -105,13 +105,19 @@ function NuevoReclamo() {
         >
           Edificio
         </Breadcrumb.Item>
-        {(unidadesView || reclamosView || reclamosCreate) && (
+        {(unidadesView ||
+          reclamosView ||
+          reclamosCreate ||
+          reclamosComunView ||
+          reclamosComunCreate) && (
           <Breadcrumb.Item
             onClick={() => {
               setEdificioView(false);
               setUnidadesView(true);
               setReclamosView(false);
               setReclamosCreate(false);
+              setReclamosComunCreate(false);
+              setReclamosComunView(false);
             }}
           >
             Unidades
@@ -165,16 +171,17 @@ function NuevoReclamo() {
             <ReclamoCard
               key={reclamo.idReclamo}
               id={reclamo.idReclamo}
-              edificio={reclamo.codigo}
-              ubicacion={reclamo.ubicacion}
-              descripcion={reclamo.descripcion}
-              identificador={reclamo.codigo}
-              estado={reclamo.estado}
+              edificio={`Edificio: ${
+                edificios.find((edificio) => edificio.codigo == reclamo.codigo)
+                  ?.nombre
+              }`}
+              ubicacion={`Ubicacion: ${reclamo.ubicacion}`}
+              descripcion={`Descripcion: ${reclamo.descripcion}`}
+              estado={`Estado: ${reclamo.estado}`}
             />
           ))}
         </div>
       )}
-      {console.log(codigoEdificioActual)}
       {reclamosComunCreate && (
         <GenerarReclamoComun
           edificios={edificios.find(
@@ -187,8 +194,22 @@ function NuevoReclamo() {
         ></GenerarReclamoComun>
       )}
       {unidadesView && (
+        <div
+          className="w-100 w-md-50"
+          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%" }}
+        >
+          <NormalButton
+            onClickFuncion={() => {
+              setReclamosComunView(true);
+              setUnidadesView(false);
+              fetchDataReclamosComunes(codigoEdificioActual);
+            }}
+            accion={"Reclamos Comunes"}
+          />
+        </div>
+      )}
+      {unidadesView && (
         <ContainerCards titulo="Seleccionar Unidad">
-          {console.log(codigoEdificioActual)}
           {unidades
             .filter((unidad) => unidad.codigoEdificio == codigoEdificioActual)
             .map((unidad) => (
@@ -208,22 +229,26 @@ function NuevoReclamo() {
       )}
       {reclamosView && (
         <div
-        className="w-md-50 d-flex text-center"
-        style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%", textAlignLast: "center",width: "60%" }}
-        >
-        <NormalButton
-          onClickFuncion={() => {
-            setReclamosCreate(true);
-            setReclamosView(false);
+          className="w-md-50 d-flex text-center"
+          style={{
+            textAlignLast: "left",
+            marginTop: "3%",
+            marginBottom: "4%",
+            textAlignLast: "center",
+            width: "60%",
           }}
-          accion={"Crear nuevo Reclamo"}
-        />
-         <NormalButton accion={"Ver todos mis reclamos"}>
-            <Link to="/reclamos">
-            </Link>
-           </NormalButton>
-
-      </div>
+        >
+          <NormalButton
+            onClickFuncion={() => {
+              setReclamosCreate(true);
+              setReclamosView(false);
+            }}
+            accion={"Crear nuevo Reclamo"}
+          />
+          <NormalButton accion={"Ver todos mis reclamos"}>
+            <Link to="/reclamos"></Link>
+          </NormalButton>
+        </div>
       )}
       {reclamosView && reclamos && (
         <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
@@ -231,11 +256,22 @@ function NuevoReclamo() {
             <ReclamoCard
               key={reclamo.idReclamo}
               id={reclamo.idReclamo}
-              edificio={reclamo.codigo}
-              ubicacion={reclamo.ubicacion}
-              descripcion={reclamo.descripcion}
-              identificador={reclamo.identificador}
-              estado={reclamo.estado}
+              edificio={`Edificio: ${
+                edificios.find((edificio) => edificio.codigo == reclamo.codigo)
+                  ?.nombre
+              }`}
+              ubicacion={`Ubicacion: ${reclamo.ubicacion}`}
+              descripcion={`Descripcion: ${reclamo.descripcion}`}
+              identificador={`Piso ${
+                unidades.find(
+                  (unidad) => unidad.identificador == identificadorActual
+                )?.piso
+              } Nº ${
+                unidades.find(
+                  (unidad) => unidad.identificador == identificadorActual
+                )?.numero
+              }`}
+              estado={`Estado: ${reclamo.estado}`}
             />
           ))}
         </div>
