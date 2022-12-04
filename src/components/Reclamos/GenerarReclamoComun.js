@@ -5,7 +5,6 @@ import AuthContext from "../../store/auth-context";
 
 const GenerarReclamoComun = (props) => {
   const ctx = useContext(AuthContext);
-  console.log(props);
 
   const handleEnviar = async (event) => {
     event.preventDefault();

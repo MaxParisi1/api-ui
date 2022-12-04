@@ -43,7 +43,6 @@ function NuevoReclamo() {
       if (response.length <= 1) {
         setEdificioView(false);
         setUnidadesView(true);
-        console.log(response[0].codigo);
         setCodigoEdificioActual(response[0].codigo);
       }
     });

@@ -1,14 +1,13 @@
 import React from "react";
 import { useState } from "react";
 import ReclamoCard from "./ReclamoCard";
-import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space, Typography } from "antd";
 import { useEffect } from "react";
 import { useContext } from "react";
-import axios from "axios";
 import AuthContext from "../../store/auth-context";
 import reclamoServicio from "../../services/reclamoServicio";
-import Form from "react-bootstrap/Form";
+import servicioEdificio from "../../services/edificioServicio";
+import unidadServicio from "../../services/unidadServicio";
 
 const items = [
   {
@@ -105,29 +104,29 @@ const Reclamos = () => {
         </h4>
       </div>
       <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4 justify-content-center">
-        {estado !== ""
+        {estado && reclamos
           ? reclamos
               .filter((reclamo) => reclamo.estado === estado)
-              .map((reclamo) => (
+              ?.map((reclamo) => (
                 <ReclamoCard
-                  key={reclamo.idReclamo}
-                  id={reclamo.idReclamo}
-                  edificio={reclamo.codigo}
-                  ubicacion={reclamo.ubicacion}
-                  descripcion={reclamo.descripcion}
-                  identificador={reclamo.identificador}
-                  estado={reclamo.estado}
+                  key={reclamo?.idReclamo}
+                  id={reclamo?.idReclamo}
+                  edificio={`Edificio: ${reclamo?.codigo.nombre}`}
+                  ubicacion={`Ubicacion: ${reclamo?.ubicacion}`}
+                  descripcion={`Descripcion: ${reclamo?.descripcion}`}
+                  identificador={`Piso ${reclamo?.identificador?.piso} Nº ${reclamo?.identificador?.numero}`}
+                  estado={`Estado: ${reclamo?.estado}`}
                 />
               ))
           : reclamos?.map((reclamo) => (
               <ReclamoCard
-                key={reclamo.idReclamo}
-                id={reclamo.idReclamo}
-                edificio={reclamo.codigo}
-                ubicacion={reclamo.ubicacion}
-                descripcion={reclamo.descripcion}
-                identificador={reclamo.identificador}
-                estado={reclamo.estado}
+                key={reclamo?.idReclamo}
+                id={reclamo?.idReclamo}
+                edificio={`Edificio: ${reclamo?.codigo?.nombre}`}
+                ubicacion={`Ubicacion: ${reclamo?.ubicacion}`}
+                descripcion={`Descripcion: ${reclamo?.descripcion}`}
+                identificador={`Piso ${reclamo?.identificador?.piso} Nº ${reclamo?.identificador?.numero}`}
+                estado={`Estado: ${reclamo?.estado}`}
               />
             ))}
       </div>
