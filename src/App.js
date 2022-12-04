@@ -12,6 +12,7 @@ import ListaEdificios from "./pages/edificio/ListaEdificios";
 import EditarEdificio from "./pages/edificio/EditarEdificio";
 import UnidadesEdificio from "./pages/unidad/UnidadesEdificio";
 import ListarPersonas from "./pages/persona/ListarPersonas";
+import ReclamosAdmin from "./pages/reclamo/ReclamosAdmin";
 
 
 
@@ -29,6 +30,8 @@ function App() {
               <Route exact path="/" element={<Home />} />
               <Route exact path="/reclamos" element={<Reclamos />} />
               <Route exact path="/reclamo" element={<NuevoReclamo />} />
+
+              <Route exact path="/misReclamos" element={<ReclamosAdmin />} />
 
               <Route exact path="/crearEdificio" element={<CrearEdificio />} />
               <Route
