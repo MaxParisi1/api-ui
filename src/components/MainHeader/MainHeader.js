@@ -25,7 +25,7 @@ const MainHeader = () => {
           Infinity
         </div>
 
-        {ctx.isLoggedIn && (
+        {/* {ctx.isLoggedIn && ( */}
           <div className=" text-center p-1">
             {ctx.isAdmin && <NavigationAdmin />}
             {!ctx.isAdmin && <Navigation />}
@@ -37,7 +37,7 @@ const MainHeader = () => {
               Cerrar sesion
             </button>
           </div>
-        )}
+        {/* )} */}
 
         {/* Modal para cerrar sesion */}
         <Modal
@@ -57,6 +57,7 @@ const MainHeader = () => {
           <Modal.Footer class="modal-footer">
             <button
               onClick={ctx.onLogout}
+              onClick={handleClose}
               type="button"
               class="btn btn-outline-secondary"
               data-bs-dismiss="modal"

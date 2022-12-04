@@ -148,7 +148,7 @@ function NuevoReclamo() {
       {reclamosComunView && (
         <div
           className="w-100 w-md-50"
-          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%" }}
+          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%", justifyContent: "center",     textAlignLast: "center"}}
         >
           <NormalButton
             onClickFuncion={() => {
@@ -208,20 +208,25 @@ function NuevoReclamo() {
       )}
       {reclamosView && (
         <div
-        className="w-md-50 d-flex text-center"
-        style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%", textAlignLast: "center",width: "60%" }}
+        className="d-flex text-center"
+        style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%",justifyContent: "center" }}
         >
-        <NormalButton
-          onClickFuncion={() => {
+          <div style={{textAlignLast: "right"}}>
+            <NormalButton
+            onClickFuncion={() => {
             setReclamosCreate(true);
             setReclamosView(false);
-          }}
-          accion={"Crear nuevo Reclamo"}
-        />
-         <NormalButton accion={"Ver todos mis reclamos"}>
+            }}
+            accion={"Crear nuevo Reclamo"} 
+          /></div>
+        
+        <div style={{textAlignLast: "left"}}>
+          <NormalButton accion={"Ver todos mis reclamos"} >
             <Link to="/reclamos">
             </Link>
-           </NormalButton>
+          </NormalButton>
+        </div>
+         
 
       </div>
       )}
