@@ -1,5 +1,6 @@
 import React, { Component, useContext } from "react";
 import AuthContext from "../../store/auth-context";
+import Navigation from "../Navigation/Navigation";
 import NavigationAdmin from "../Navigation/NavigationAdmin";
 
 const MainHeader = () => {
@@ -22,6 +23,7 @@ const MainHeader = () => {
         {ctx.isLoggedIn && (
           <div className=" text-center p-1">
             {ctx.isAdmin && <NavigationAdmin />}
+            {!ctx.isAdmin && <Navigation />}
             <button
               type="button"
               className="btn btn-outline-dark btn-sm mx-1"

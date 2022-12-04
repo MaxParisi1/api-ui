@@ -6,6 +6,7 @@ import AuthContext from "./store/auth-context";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Reclamos from "./components/Reclamos/Reclamos";
+import NuevoReclamo from "./components/Reclamos/NuevoReclamo";
 
 function App() {
   const ctx = useContext(AuthContext);
@@ -20,6 +21,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/reclamos" element={<Reclamos />} />
+              <Route exact path="/reclamo" element={<NuevoReclamo />} />
             </Routes>
           )}
         </main>
