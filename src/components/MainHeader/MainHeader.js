@@ -27,8 +27,8 @@ const MainHeader = () => {
 
         {ctx.isLoggedIn && (
           <div className=" text-center p-1">
-            {ctx.isAdmin && <NavigationAdmin />}
-            {!ctx.isAdmin && <Navigation />}
+            {/* {ctx.isAdmin && <NavigationAdmin />}
+            {!ctx.isAdmin && <Navigation />} */}
             <button
               type="button"
               className="btn btn-outline-dark btn-sm mx-1"

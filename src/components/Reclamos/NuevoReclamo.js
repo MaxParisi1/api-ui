@@ -146,28 +146,22 @@ function NuevoReclamo() {
       )}
       {reclamosView && (
         <div
-          className="w-100 w-md-50"
-          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%" }}
+        className="w-md-50 d-flex text-center"
+        style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%", textAlignLast: "center",width: "60%" }}
         >
-          <NormalButton
-            onClickFuncion={() => {
-              setReclamosCreate(true);
-              setReclamosView(false);
-            }}
-            accion={"Crear nuevo Reclamo"}
-          />
-          <button type="button" className="btn btn-outline-dark btn-sm mx-1">
-            <Link to="/reclamos" className="text-decoration-none">
-              <a
-                className="text-decoration-none text-dark"
-                href="../../index.html"
-                style={{ color: "var(--bs-dropdown-link-color)" }}
-              >
-                Ver todos mis reclamos
-              </a>
+        <NormalButton
+          onClickFuncion={() => {
+            setReclamosCreate(true);
+            setReclamosView(false);
+          }}
+          accion={"Crear nuevo Reclamo"}
+        />
+         <NormalButton accion={"Ver todos mis reclamos"}>
+            <Link to="/reclamos">
             </Link>
-          </button>
-        </div>
+           </NormalButton>
+
+      </div>
       )}
       {reclamosView && reclamos && (
         <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
