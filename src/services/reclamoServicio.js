@@ -17,6 +17,7 @@ const getReclamosPorUnidad = async (codigo, piso, numero) => {
     )
     .then((res) => (response = res.data))
     .catch((err) => console.log(err));
+
   return response;
 };
 
@@ -28,7 +29,6 @@ const agregarReclamo = async (
   ubicacion,
   descripcion
 ) => {
-  console.log(typeof codigo);
   const params = new URLSearchParams({
     codigo: codigo,
     piso: piso,
