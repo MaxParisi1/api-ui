@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { useContext } from "react";
 import axios from "axios";
 import AuthContext from "../../store/auth-context";
+import reclamoServicio from "../../services/reclamoServicio";
 
 const items = [
   {
@@ -45,10 +46,10 @@ const Reclamos = () => {
   const [estado, setEstado] = useState("");
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:8080/api/reclamo/persona/${ctx.documento}`)
-      .then((res) => setReclamos(res.data))
-      .catch((err) => console.log(err));
+    const fetchData = async () => {
+      setReclamos(await reclamoServicio.getReclamosPorDocumento(ctx.documento));
+    };
+    fetchData();
   }, []);
 
   const onClick = ({ key }) => {
