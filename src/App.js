@@ -14,11 +14,8 @@ import UnidadesEdificio from "./pages/unidad/UnidadesEdificio";
 import ListarPersonas from "./pages/persona/ListarPersonas";
 import ReclamosAdmin from "./pages/reclamo/ReclamosAdmin";
 
-
-
 function App() {
   const ctx = useContext(AuthContext);
-
   return (
     <Router>
       <div className="container">
@@ -31,7 +28,7 @@ function App() {
               <Route exact path="/reclamos" element={<Reclamos />} />
               <Route exact path="/reclamo" element={<NuevoReclamo />} />
 
-              <Route exact path="/misReclamos" element={<ReclamosAdmin />} />
+              <Route exact path="/Reclamos" element={<ReclamosAdmin />} />
 
               <Route exact path="/crearEdificio" element={<CrearEdificio />} />
               <Route

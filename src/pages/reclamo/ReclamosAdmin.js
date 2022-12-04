@@ -73,7 +73,7 @@ function ReclamosAdmin() {
     <div>
       <div className="container">
         <h1 className="py-4">
-          <i className="bi bi-clipboard2-minus p-2"></i>Mis reclamos
+          <i className="bi bi-clipboard2-minus p-2"></i>Reclamos
         </h1>
 
         <h4 className="p-2">

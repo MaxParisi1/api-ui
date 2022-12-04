@@ -21,23 +21,15 @@ const NavigationAdmin = () => {
 
         {/* Reclamos */}
 
-        <Dropdown as={ButtonGroup}>
-          <Dropdown.Toggle
-            id="dropdown-custom-1"
-            className="dropdown btn btn-outline-dark dropdown-toggle btn-sm mx-1"
+        <Link to="/Reclamos" className="text-decoration-none">
+          <button
+            type="button"
+            className="dropdown btn btn-outline-dark btn-sm mx-1"
             style={{ backgroundColor: "transparent" }}
           >
             Reclamos
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            {/* Falta parametro para ver los reclamos de X persona */}
-            <Dropdown.Item>
-              <Link to="/misReclamos" className="text-decoration-none">
-                <a className="dropdown-item ">Mis reclamos</a>
-              </Link>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+          </button>
+        </Link>
 
         {/* Edificios */}
 
