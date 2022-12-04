@@ -9,6 +9,15 @@ const getReclamosPorDocumento = async (documento) => {
   return response;
 };
 
+const getReclamosComunesPorEdificio = async (codigo) => {
+  let response;
+  const request = await axios
+    .get(`http://localhost:8080/api/reclamo/edificio/${codigo}/comunes`)
+    .then((res) => (response = res.data))
+    .catch((err) => console.log(err));
+  return response;
+};
+
 const getReclamosPorUnidad = async (codigo, piso, numero) => {
   let response;
   const request = await axios
@@ -45,10 +54,32 @@ const agregarReclamo = async (
   return response;
 };
 
+const agregarReclamoComun = async (
+  codigo,
+  documento,
+  ubicacion,
+  descripcion
+) => {
+  const params = new URLSearchParams({
+    codigo: codigo,
+    documento: documento,
+    ubicacion: ubicacion,
+    descripcion: descripcion,
+  }).toString();
+  let response;
+  const request = await axios
+    .post("http://localhost:8080/api/reclamo/agregar?" + params)
+    .then((res) => (response = res.data))
+    .catch((err) => console.log(err));
+  return response;
+};
+
 const reclamoServicio = {
   getReclamosPorDocumento,
   getReclamosPorUnidad,
   agregarReclamo,
+  getReclamosComunesPorEdificio,
+  agregarReclamoComun,
 };
 
 export default reclamoServicio;

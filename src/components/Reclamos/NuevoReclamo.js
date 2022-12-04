@@ -11,12 +11,14 @@ import reclamoServicio from "../../services/reclamoServicio";
 import NormalButton from "../Utils/NormalButton";
 import GenerarReclamo from "./GenerarReclamo";
 import { Link } from "react-router-dom";
+import GenerarReclamoComun from "./GenerarReclamoComun";
 
 function NuevoReclamo() {
   const ctx = useContext(AuthContext);
   const [unidades, setUnidades] = useState([{}]);
   const [edificios, setEdificios] = useState([]);
   const [reclamos, setReclamos] = useState([{}]);
+  const [reclamosComunes, setReclamosComunes] = useState([{}]);
 
   const [codigoEdificioActual, setCodigoEdificioActual] = useState(0);
   const [identificadorActual, setIdentificadorActual] = useState(0);
@@ -24,6 +26,8 @@ function NuevoReclamo() {
   const [unidadesView, setUnidadesView] = useState(false);
   const [reclamosView, setReclamosView] = useState(false);
   const [reclamosCreate, setReclamosCreate] = useState(false);
+  const [reclamosComunCreate, setReclamosComunCreate] = useState(false);
+  const [reclamosComunView, setReclamosComunView] = useState(false);
 
   useEffect(() => {
     unidadServicio.getUnidadesPorDocumento(ctx.documento).then((response) => {
@@ -59,6 +63,12 @@ function NuevoReclamo() {
     );
   };
 
+  const fetchDataReclamosComunes = async (codigo) => {
+    setReclamosComunes(
+      await reclamoServicio.getReclamosComunesPorEdificio(codigo)
+    );
+  };
+
   const selectEdificio = (event) => {
     setCodigoEdificioActual(event.target.parentNode.parentNode.id);
     setEdificioView(false);
@@ -72,6 +82,13 @@ function NuevoReclamo() {
     fetchDataReclamos(event.target.parentNode.parentNode.id);
   };
 
+  const reclamoComun = (event) => {
+    setCodigoEdificioActual(event.target.parentNode.parentNode.id);
+    setEdificioView(false);
+    setReclamosComunView(true);
+    fetchDataReclamosComunes(event.target.parentNode.parentNode.id);
+  };
+
   return (
     <div>
       <Breadcrumb>
@@ -82,6 +99,8 @@ function NuevoReclamo() {
             setUnidadesView(false);
             setReclamosView(false);
             setReclamosCreate(false);
+            setReclamosComunCreate(false);
+            setReclamosComunView(false);
           }}
         >
           Edificio
@@ -120,9 +139,52 @@ function NuevoReclamo() {
               cuerpo={`Dirección: ${edificio.direccion}`}
               onClick={selectEdificio}
               accion={"Unidades"}
+              reclamoComun={reclamoComun}
+              accion2={"Reclamos Comunes"}
             />
           ))}
         </ContainerCards>
+      )}
+      {reclamosComunView && (
+        <div
+          className="w-100 w-md-50"
+          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%" }}
+        >
+          <NormalButton
+            onClickFuncion={() => {
+              setReclamosComunCreate(true);
+              setReclamosComunView(false);
+            }}
+            accion={"Crear nuevo Reclamo Comun"}
+          />
+        </div>
+      )}
+      {reclamosComunView && (
+        <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
+          {reclamosComunes?.map((reclamo) => (
+            <ReclamoCard
+              key={reclamo.idReclamo}
+              id={reclamo.idReclamo}
+              edificio={reclamo.codigo}
+              ubicacion={reclamo.ubicacion}
+              descripcion={reclamo.descripcion}
+              identificador={reclamo.codigo}
+              estado={reclamo.estado}
+            />
+          ))}
+        </div>
+      )}
+      {console.log(codigoEdificioActual)}
+      {reclamosComunCreate && (
+        <GenerarReclamoComun
+          edificios={edificios.find(
+            (edificio) => edificio.codigo == codigoEdificioActual
+          )}
+          endCreate={() => {
+            setReclamosComunCreate(false);
+            setEdificioView(true);
+          }}
+        ></GenerarReclamoComun>
       )}
       {unidadesView && (
         <ContainerCards titulo="Seleccionar Unidad">

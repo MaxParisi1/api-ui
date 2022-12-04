@@ -2,7 +2,6 @@ import React from "react";
 import NormalButton from "./NormalButton";
 
 function Card(props) {
-  console.log(props.id);
   return (
     <div
       class="card mb-3 m-4"
@@ -16,6 +15,12 @@ function Card(props) {
         <p class="card-text">{props.cuerpo}</p>
       </div>
       <NormalButton onClickFuncion={props.onClick} accion={props.accion} />
+      {props.accion2 && (
+        <NormalButton
+          onClickFuncion={props.reclamoComun}
+          accion={props.accion2}
+        />
+      )}
     </div>
   );
 }

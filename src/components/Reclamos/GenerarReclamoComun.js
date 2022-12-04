@@ -3,15 +3,14 @@ import { Modal } from "antd";
 import reclamoServicio from "../../services/reclamoServicio";
 import AuthContext from "../../store/auth-context";
 
-const GenerarReclamo = (props) => {
+const GenerarReclamoComun = (props) => {
   const ctx = useContext(AuthContext);
+  console.log(props);
 
   const handleEnviar = async (event) => {
     event.preventDefault();
-    const numero = await reclamoServicio.agregarReclamo(
-      props.unidad.codigoEdificio,
-      props.unidad.piso,
-      props.unidad.numero,
+    const numero = await reclamoServicio.agregarReclamoComun(
+      props.edificios.codigo,
       ctx.documento,
       event.target.ubicacion.value,
       event.target.descripcion.value
@@ -52,32 +51,8 @@ const GenerarReclamo = (props) => {
             aria-label="Seleccionar dueño"
             readOnly="readOnly"
           >
-            <option>{props.unidad.codigoEdificio}</option>
+            <option>{props.edificios.codigo}</option>
           </select>
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Piso
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            value={props.unidad.piso}
-            readOnly="readOnly"
-          />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">
-            Departamento
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            value={props.unidad.numero}
-            readOnly="readOnly"
-          />
         </div>
 
         <div className="mb-3">
@@ -119,4 +94,4 @@ const GenerarReclamo = (props) => {
   );
 };
 
-export default GenerarReclamo;
+export default GenerarReclamoComun;
