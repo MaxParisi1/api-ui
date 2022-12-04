@@ -1,10 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Link } from "react";
+import NormalButton from '../Utils/NormalButton';
 
 export class Home extends Component {
   render() {
     return (
       <div className="homepage">
         <div className="mt-4" style={{ justifyContent: "space-between" }}>
+
+
           <div
             className="card mb-3 align-self-center"
             style={{ maxWidth: "540px" }}

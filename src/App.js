@@ -16,14 +16,14 @@ function App() {
       <div className="container">
         <MainHeader />
         <main>
-          {!ctx.isLoggedIn && <Login />}
-          {ctx.isLoggedIn && (
+          {/* {!ctx.isLoggedIn && <Login />}
+          {ctx.isLoggedIn && ( */}
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/reclamos" element={<Reclamos />} />
               <Route exact path="/reclamo" element={<NuevoReclamo />} />
             </Routes>
-          )}
+          {/* )} */}
         </main>
       </div>
     </Router>
