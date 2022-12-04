@@ -10,6 +10,7 @@ import ReclamoCard from "./ReclamoCard";
 import reclamoServicio from "../../services/reclamoServicio";
 import NormalButton from "../Utils/NormalButton";
 import GenerarReclamo from "./GenerarReclamo";
+import { Link } from "react-router-dom";
 
 function NuevoReclamo() {
   const ctx = useContext(AuthContext);
@@ -35,6 +36,12 @@ function NuevoReclamo() {
     const set = new Set(result);
     servicioEdificio.getEdificiosPorIds(set).then((response) => {
       setEdificios(response);
+      if (response.length <= 1) {
+        setEdificioView(false);
+        setUnidadesView(true);
+        console.log(response[0].codigo);
+        setCodigoEdificioActual(response[0].codigo);
+      }
     });
   }, [unidades]);
 
@@ -42,7 +49,6 @@ function NuevoReclamo() {
     const unidadSeleccionada = unidades.find(
       (unidad) => unidad.identificador == identificador
     );
-    console.log(unidadSeleccionada);
 
     setReclamos(
       await reclamoServicio.getReclamosPorUnidad(
@@ -153,13 +159,26 @@ function NuevoReclamo() {
         </div>
       )}
       {reclamosView && (
-        <NormalButton
-          onClickFuncion={() => {
-            setReclamosCreate(true);
-            setReclamosView(false);
-          }}
-          accion={"Crear nuevo Reclamo"}
-        />
+        <div>
+          <NormalButton
+            onClickFuncion={() => {
+              setReclamosCreate(true);
+              setReclamosView(false);
+            }}
+            accion={"Crear nuevo Reclamo"}
+          />
+          <button type="button" className="btn btn-outline-dark btn-sm mx-1">
+            <Link to="/reclamos" className="text-decoration-none">
+              <a
+                className="text-decoration-none text-dark"
+                href="../../index.html"
+                style={{ color: "var(--bs-dropdown-link-color)" }}
+              >
+                Ver todos mis reclamos
+              </a>
+            </Link>
+          </button>
+        </div>
       )}
       {reclamosCreate && (
         <GenerarReclamo
@@ -168,7 +187,7 @@ function NuevoReclamo() {
           )}
           endCreate={() => {
             setReclamosCreate(false);
-            setEdificioView(true);
+            setUnidadesView(true);
           }}
         ></GenerarReclamo>
       )}
