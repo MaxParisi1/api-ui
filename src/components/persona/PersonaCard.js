@@ -17,39 +17,20 @@ function PersonaCard({ persona, eliminarPersona, modificarPersona }) {
     <>
       <div
         key={persona.documento}
-        class="card text-bg-secondary mb-3 m-4"
-        style={{ maxWidth: "18rem" }}
+        class="card mb-3 m-4"
+        style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
       >
-        <div class="card-header">{`Documento : ${persona.documento}`}</div>
+        <div class="card-header" style={{ borderBottom: "solid 1px #519657" }}>{`Documento : ${persona.documento}`}</div>
         <div class="card-body">
           <p class="card-text">{`Nombre : ${persona.nombre}`}</p>
         </div>
 
         {/* MODIFICAR PERSONA */}
-        <button
-          type="button"
-          class="btn btn-outline-light btn-sm m-2 w-50 "
-          style={{
-            color: "var(--bs-dropdown-link-color)",
-            alignSelf: "center",
-          }}
-          onClick={handleShowEditar}
-        >
-          Editar
-        </button>
+        <NormalButton onClickFuncion={handleShowEditar} accion="Editar" />
+
 
         {/* ELIMINAR PERSONA */}
-        <button
-          type="button"
-          class="btn btn-outline-light btn-sm m-2 w-50 "
-          style={{
-            color: "var(--bs-dropdown-link-color)",
-            alignSelf: "center",
-          }}
-          onClick={handleShow}
-        >
-          Eliminar
-        </button>
+        <NormalButton onClickFuncion={handleShow} accion="Eliminar" />
       </div>
 
       {/* MODAL ELIMINAR PERSONA */}

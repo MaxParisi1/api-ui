@@ -17,10 +17,10 @@ function CardUnidad({ unidad, modificarUnidad, eliminarUnidad }) {
     <>
       <div
         key={unidad.identificador}
-        class="card text-bg-secondary mb-3 m-4"
-        style={{ maxWidth: "18rem" }}
+        class="card mb-3 m-4"
+        style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
       >
-        <div class="card-header">{`Identificador : ${unidad.identificador}`}</div>
+        <div class="card-header" style={{ borderBottom: "solid 1px #519657" }}> {`Identificador : ${unidad.identificador}`}</div>
         <div class="card-body">
           <p class="card-text">{`Piso : ${unidad.piso}`}</p>
           <p class="card-text">{`Numero : ${unidad.numero}`}</p>

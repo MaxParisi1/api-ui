@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import LinkButton from "../Utils/LinkButton";
 import Modal from 'react-bootstrap/Modal';
+import NormalButton from "../Utils/NormalButton";
 
 function CardEdificio({codigo,nombre,direccion, eliminarEdificio}) {
 
@@ -11,10 +12,10 @@ function CardEdificio({codigo,nombre,direccion, eliminarEdificio}) {
   return (
     <div
       key={codigo}
-      class="card text-bg-secondary mb-3 m-4"
-      style={{ maxWidth: "18rem" }}
+      class="card mb-3 m-4"
+      style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
     >
-      <div class="card-header">{nombre}</div>
+      <div class="card-header" style={{ borderBottom: "solid 1px #519657" }}> {nombre}</div>
       <div class="card-body">
         <p class="card-text">{`Direccion : ${direccion}`}</p>
       </div>
@@ -22,14 +23,8 @@ function CardEdificio({codigo,nombre,direccion, eliminarEdificio}) {
       <LinkButton path={`/edificio/${codigo}/unidad`} action="Unidades"  />
       <LinkButton path={`/edificio/${codigo}`} action="Editar" estilo="50%" class="w-50"/>
       
-      <button
-        type="button"
-        class="btn btn-outline-light btn-sm m-2 w-50 "
-        style={{ color: "var(--bs-dropdown-link-color)", alignSelf: "center" }}
-        onClick={handleShow}
-      >
-        Eliminar
-      </button> 
+
+      <NormalButton onClickFuncion={handleShow} accion="Eliminar" />
 
       {/* Modal */}
       <Modal show={show} onHide={handleClose} class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">  

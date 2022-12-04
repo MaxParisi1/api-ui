@@ -38,7 +38,7 @@ function UnidadesEdificio() {
   const eliminarUnidad = (identificador) => {
     unidadServicio.deleteUnidad(identificador).then(() => {
       setUnidades(
-        unidades.filter((unidad) => unidad.identificador != identificador)
+        unidades.filter((unidad) => unidad.identificador !== identificador)
       );
     });
   };

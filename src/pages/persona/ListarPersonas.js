@@ -48,14 +48,14 @@ function ListarPersonas() {
 
   const eliminarDuenio = (documento) => {
     unidadServicio.deleteDuenio(documento, identificador).then(() => {
-      setDuenios(duenios.filter((duenio) => duenio.documento != documento));
+      setDuenios(duenios.filter((duenio) => duenio.documento !== documento));
     });
   };
 
   const eliminarInquilino = (documento) => {
     unidadServicio.deleteInquilino(documento, identificador).then(() => {
       setinquilinos(
-        inquilinos.filter((inquilino) => inquilino.documento != documento)
+        inquilinos.filter((inquilino) => inquilino.documento !== documento)
       );
     });
   };

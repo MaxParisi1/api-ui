@@ -22,7 +22,7 @@ function ListaEdificios() {
         console.log("hola");
       }
       */
-        setEdificios(edificios.filter((edificio) => edificio.codigo != codigo));
+        setEdificios(edificios.filter((edificio) => edificio.codigo !== codigo));
       })
       .catch(function(error) {
         console.log(error.response.data); //No se puede eliminar un edificio si tiene unidades

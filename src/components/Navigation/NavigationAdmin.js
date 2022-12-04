@@ -1,7 +1,7 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
-import React, { Component, useContext } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const NavigationAdmin = () => {
   return (
@@ -21,7 +21,7 @@ const NavigationAdmin = () => {
 
         {/* Reclamos */}
 
-        <Link to="/Reclamos" className="text-decoration-none">
+        <Link to="/ReclamosAdmin" className="text-decoration-none">
           <button
             type="button"
             className="dropdown btn btn-outline-dark btn-sm mx-1"
