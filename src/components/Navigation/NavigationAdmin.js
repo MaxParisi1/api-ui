@@ -30,20 +30,6 @@ const NavigationAdmin = () => {
             Reclamos
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="/generarReclamoC" className="text-decoration-none">
-                <a className="dropdown-item ">
-                  Generar reclamo sobre espacio comun
-                </a>
-              </Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="/generarReclamoU" className="text-decoration-none">
-                <a className="dropdown-item ">
-                  Generar reclamo sobre una unidad
-                </a>
-              </Link>
-            </Dropdown.Item>
             {/* Falta parametro para ver los reclamos de X persona */}
             <Dropdown.Item>
               <Link to="/misReclamos" className="text-decoration-none">
