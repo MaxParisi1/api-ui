@@ -35,7 +35,11 @@ function ListaEdificios() {
 
   const crearEdificio = (edificio) => {
     servicioEdificio.createEdificio(edificio)
-    .then((response) => {console.log(`Edificio creado con id ${response}`);});
+    .then((response) => {console.log(`Edificio creado con id ${response}`);})
+    .catch(function(error) {
+      console.log(error.response.data);
+      alert(error.response.data);
+    });;
   }
 
   const modificarEdificio = (codigo, datos) => {

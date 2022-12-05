@@ -33,7 +33,11 @@ function UnidadesEdificio() {
     unidadNueva.codigoEdificio = codigo;
     unidadServicio.createUnidad(unidadNueva).then((response) => {
       console.log(response);
+    }).catch(function(error) {
+      console.log(error.response.data);
+      alert(error.response.data);
     });
+    ;
   };
 
   const modificarUnidad = (identificador, unidad) => {

@@ -120,7 +120,7 @@ function ReclamosAdmin() {
       console.log("RECLAMOS");
       console.log(response);
     });
-  }, [estado, edificioFiltro]);
+  }, [estado, edificioFiltro]); //reclamo
 
   const onClick = ({ key }) => {
     if (key === "1") {
@@ -164,6 +164,7 @@ function ReclamosAdmin() {
 
   const cambiarEstado = (idReclamo, estado) => {
     reclamoServicio.cambiarEstado(idReclamo, estado).then((response) => {
+      setReclamos(reclamos.filter((reclamo) => reclamo.idReclamo != idReclamo))
       console.log(response);
     });
   };
