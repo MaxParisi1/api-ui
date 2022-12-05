@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function LinkButton({ path, action, estilo }) {
+function LinkButton({ path, action, estilo,onClickFuncion }) {
   return (
     <div>
       <Link to={path} className="w-100" type="button" style={{ color: "var(--bs-dropdown-link-color)", textAlign: "center" }}>
@@ -9,6 +9,7 @@ function LinkButton({ path, action, estilo }) {
           type="button"
           class="btn btn-outline-light btn-sm m-2 w-50"
           style={{ color: "var(--bs-dropdown-link-color)", width:{estilo} }}
+          onClick={onClickFuncion}
         >
           {action}
         </button>

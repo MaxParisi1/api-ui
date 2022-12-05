@@ -7,9 +7,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Reclamos from "./components/Reclamos/Reclamos";
 import NuevoReclamo from "./components/Reclamos/NuevoReclamo";
-import CrearEdificio from "./pages/edificio/CrearEdificio";
 import ListaEdificios from "./pages/edificio/ListaEdificios";
-import EditarEdificio from "./pages/edificio/EditarEdificio";
 import UnidadesEdificio from "./pages/unidad/UnidadesEdificio";
 import ListarPersonas from "./pages/persona/ListarPersonas";
 import ReclamosAdmin from "./pages/reclamo/ReclamosAdmin";
@@ -30,16 +28,10 @@ function App() {
 
               <Route exact path="/ReclamosAdmin" element={<ReclamosAdmin />} />
 
-              <Route exact path="/crearEdificio" element={<CrearEdificio />} />
               <Route
                 exact
                 path="/listaEdificios"
                 element={<ListaEdificios />}
-              />
-              <Route
-                exact
-                path="/edificio/:codigo"
-                element={<EditarEdificio />}
               />
               <Route
                 exact
