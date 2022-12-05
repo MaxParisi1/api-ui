@@ -156,19 +156,19 @@ function ReclamosAdmin() {
               onClick,
             }}
           >
-            <Typography.Link className="d-flex w-50" style={{ color: "black" }}>
-              <h4>
-                <i className="bi bi-funnel"></i>
-                Filtrar por estado:{" "}
-                <i
-                  class="bi bi-chevron-down"
-                  style={{ verticalAlign: "middle" }}
-                ></i>
+          <Typography.Link className="d-flex w-50">
+            <h4>
+              <i className="bi bi-funnel"></i>
+              Filtrar por estado:{" "}
+              <i
+                class="bi bi-chevron-down"
+                style={{ verticalAlign: "middle", marginRight: "10px" }}
+              ></i>
               </h4>
-              <Space className="">
-                <h5>{estado}</h5>
-              </Space>
-            </Typography.Link>
+              <Space>
+              <h5>{estado}</h5>
+            </Space>
+          </Typography.Link>
           </Dropdown>
 
           <Dropdown
@@ -178,19 +178,20 @@ function ReclamosAdmin() {
               onClick: onClickEdificios,
             }}
           >
-            <Typography.Link>
-              <h4>
-                <i className="bi bi-funnel"></i>
-                Filtrar por edificio:{" "}
-                <i
-                  class="bi bi-chevron-down"
-                  style={{ verticalAlign: "middle" }}
-                ></i>
+            <Typography.Link className="d-flex w-50">
+            <h4>
+              <i className="bi bi-funnel"></i>
+              Filtrar por edificio:{" "}
+              <i
+                class="bi bi-chevron-down"
+                style={{ verticalAlign: "middle", marginRight: "10px" }}
+              ></i>
               </h4>
-              <Space className="">
-                <h5>{edificioFiltro}</h5>
-              </Space>
-            </Typography.Link>
+              <Space>
+              <h5>{edificioFiltro}</h5>
+            </Space>
+          </Typography.Link>
+          
           </Dropdown>
         </h4>
       </div>

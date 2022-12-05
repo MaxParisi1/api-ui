@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const NavigationAdmin = () => {
   return (
     <>
-      <div className=" text-center p-1">
+      <div className=" text-center p-1" style={{display: "contents"}}>
         <button type="button" className="btn btn-outline-dark btn-sm mx-1">
           <Link to="/" className="text-decoration-none">
             <a
@@ -31,33 +31,12 @@ const NavigationAdmin = () => {
           </button>
         </Link>
 
-        {/* Edificios */}
+        <Link to="/listaEdificios" className="text-decoration-none">          
+          <button type="button" className="dropdown btn btn-outline-dark btn-sm mx-1" style={{ backgroundColor: "transparent" }}
+          >            
+          Edificios </button>
+          </Link>
 
-        <Dropdown as={ButtonGroup}>
-          <Dropdown.Toggle
-            id="dropdown-custom-1"
-            className="dropdown btn btn-outline-dark dropdown-toggle btn-sm mx-1"
-            style={{ backgroundColor: "transparent" }}
-          >
-            Edificios
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="/crearEdificio" className="text-decoration-none">
-                <a className="dropdown-item ">Añadir nuevo</a>
-              </Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="/listaEdificios" className="text-decoration-none">
-                <a className="dropdown-item ">Ver todos</a>
-              </Link>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
-
-        <button type="button" className="btn btn-outline-dark btn-sm mx-1">
-          Cerrar sesion
-        </button>
       </div>
     </>
   );

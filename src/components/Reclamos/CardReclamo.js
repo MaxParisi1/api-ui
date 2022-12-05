@@ -119,7 +119,7 @@ function CardReclamo({
             type="button"
             class="btn"
             data-bs-dismiss="modal"
-            style={{ backgroundColor: "#DEB887" }}
+            style={{ borderColor: "#519657", color: "#519657" }}
           >
             {" "}
             Cancelar

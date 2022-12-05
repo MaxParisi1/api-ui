@@ -4,11 +4,11 @@ const ReclamoCard = (props) => {
   return (
     <div
       className="card  mb-3 m-4"
-      style={{ maxWidth: "18rem", border: "solid 2px #DEB887" }}
+      style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
     >
       <div
         className="card-header"
-        style={{ borderBottom: "solid 1px #DEB887" }}
+        style={{ borderBottom: "solid 1px #519657" }}
       >
         Nro de Reclamo: {props.id}
       </div>

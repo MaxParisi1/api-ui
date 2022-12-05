@@ -55,7 +55,7 @@ function ModalAlquilarUnidad({
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={onHide}>
-            Close
+            Cancelar
           </Button>
           <Button
             variant="primary"

@@ -9,6 +9,9 @@ import ModalTransferirUnidad from "../../components/unidad/ModalTransferirUnidad
 import ModalAlquilarUnidad from "../../components/unidad/ModalAlquilarUnidad";
 import ModalControlUnidad from "../../components/unidad/ModalControlUnidad";
 
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 function ListarPersonas() {
   const { codigo, piso, numero, identificador } = useParams();
   const [duenios, setDuenios] = useState([]);
@@ -119,116 +122,107 @@ function ListarPersonas() {
   };
 
   return (
-    <>
-      <div className="d-flex=row">
-        <div className="d-flex ">
-          <div className="">
-            <h6>Eliminar todos los inquilinos de una unidad:</h6>
-            <NormalButton onClickFuncion={handleShowLiberar} accion="Liberar" />
-          </div>
-          <div className="">
-            <h6>Transfiere la propiedad de una unidad:</h6>
-            <NormalButton
-              onClickFuncion={handleShowTransferir}
-              accion="Transferir"
-            />
-          </div>
-          <div className="">
-            <h6>Alquilar una unidad vacia:</h6>
-            <NormalButton
-              onClickFuncion={handleShowAlquilar}
-              accion="Alquilar"
-            />
-          </div>
+    <div>
+      <h2 className="mt-4 ml-5">Detalle de la unidad</h2>
+      <div className="container-sm p-5 mt-5"
+      style={{ maxWidth: "760px", border: "solid 2px #519657" }}
+      >
+        <div className="d-flex=row">
+          <Row className="d-flex ">
 
-          <div className="">
-            <h6>Agregar otro duenio a una unidad:</h6>
-            <NormalButton
-              onClickFuncion={handleShowAgregarDuenio}
-              accion="Agregar Duenio"
-            />
-          </div>
+            <Col>
+              <h6 className="d-flex" style={{marginBottom: "7%" }}>Eliminar todos los inquilinos de una unidad: </h6>
+              <h6 className="d-flex"  style={{marginBottom: "8%" }}>Transfiere la propiedad de una unidad: </h6>
+              <h6 className="d-flex" style={{marginBottom: "8%" }}>Alquilar una unidad vacia:</h6>
+              <h6 className="d-flex" style={{marginBottom: "8%" }}>Agregar otro duenio a una unidad:</h6>
+              <h6 className="d-flex" style={{marginBottom: "8%" }}>Agregar otro inquilino a una unidad:</h6>
+            </Col>
+
+            <Col>
+              <NormalButton onClickFuncion={handleShowLiberar} accion="Liberar" style={{width:"auto"}}/>
+              <NormalButton onClickFuncion={handleShowTransferir} accion="Transferir" style={{textAlign: "end"}} />
+              <NormalButton onClickFuncion={handleShowAlquilar} accion="Alquilar"/>
+              <NormalButton onClickFuncion={handleShowAgregarDuenio} accion="Agregar Duenio"/>
+              <NormalButton onClickFuncion={handleShowAgregarInquilino}accion="Agregar Inquilino"/>
+            </Col>
+
+          </Row>
           
-          <div className="">
-            <h6>Agregar otro inquilino a una unidad:</h6>
-            <NormalButton
-              onClickFuncion={handleShowAgregarInquilino}
-              accion="Agregar Inquilino"
-            />
+          <h3>Dueños:</h3>
+          <div className="row row-cols-1 row-cols-md-2">
+            
+            {duenios.map((duenio) => (
+              <PersonaCard
+                persona={duenio}
+                eliminarPersona={eliminarDuenio}
+                modificarPersona={modificarPersona}
+              />
+            ))}
+          </div>
+
+          <h3>Inquilino:</h3>
+
+          <div className="row row-cols-1 row-cols-md-2">
+            
+            {/* cuidado en api el endpoint inquilino llama a duenios y no inquilino,modificar */}
+            ,
+            {inquilinos.map((inquilino) => (
+              <PersonaCard
+                persona={inquilino}
+                modificarPersona={modificarPersona}
+                eliminarPersona={eliminarInquilino}
+              />
+            ))}
           </div>
         </div>
+        <ModalLiberarUnidad
+          show={showLiberar}
+          onHide={handleCloseLiberar}
+          codigo={codigo}
+          piso={piso}
+          numero={numero}
+          liberarUnidad={liberarUnidad}
+        />
 
-        <div>
-          <h3>Duenios:</h3>
-          {duenios.map((duenio) => (
-            <PersonaCard
-              persona={duenio}
-              eliminarPersona={eliminarDuenio}
-              modificarPersona={modificarPersona}
-            />
-          ))}
-        </div>
+        <ModalTransferirUnidad
+          show={showTransferir}
+          onHide={handleCloseTransferir}
+          transferirUnidad={transferirUnidad}
+          codigo={codigo}
+          piso={piso}
+          numero={numero}
+        />
 
-        <div>
-          <h3>Inquilino:</h3>
-          {/* cuidado en api el endpoint inquilino llama a duenios y no inquilino,modificar */}
-          ,
-          {inquilinos.map((inquilino) => (
-            <PersonaCard
-              persona={inquilino}
-              modificarPersona={modificarPersona}
-              eliminarPersona={eliminarInquilino}
-            />
-          ))}
-        </div>
+        <ModalAlquilarUnidad
+          show={showAlquilar}
+          onHide={handleCloseAlquilar}
+          alquilarUnidad={alquilarUnidad}
+          codigo={codigo}
+          piso={piso}
+          numero={numero}
+        />
+
+        <ModalControlUnidad
+          show={showAgregarDuenio}
+          onHide={handleCloseAgregarDuenio}
+          funcionControl={agregarDuenioUnidad}
+          codigo={codigo}
+          piso={piso}
+          numero={numero}
+          titulo="Agregar una persona como co-propietario"
+        />
+
+        <ModalControlUnidad
+          show={showAgregarInquilino}
+          onHide={handleCloseAgregarInquilino}
+          funcionControl={agregarInquilinoUnidad}
+          codigo={codigo}
+          piso={piso}
+          numero={numero}
+          titulo="Agregar una persona como co-inquilino"
+        />
       </div>
-      <ModalLiberarUnidad
-        show={showLiberar}
-        onHide={handleCloseLiberar}
-        codigo={codigo}
-        piso={piso}
-        numero={numero}
-        liberarUnidad={liberarUnidad}
-      />
-
-      <ModalTransferirUnidad
-        show={showTransferir}
-        onHide={handleCloseTransferir}
-        transferirUnidad={transferirUnidad}
-        codigo={codigo}
-        piso={piso}
-        numero={numero}
-      />
-
-      <ModalAlquilarUnidad
-        show={showAlquilar}
-        onHide={handleCloseAlquilar}
-        alquilarUnidad={alquilarUnidad}
-        codigo={codigo}
-        piso={piso}
-        numero={numero}
-      />
-
-      <ModalControlUnidad
-        show={showAgregarDuenio}
-        onHide={handleCloseAgregarDuenio}
-        funcionControl={agregarDuenioUnidad}
-        codigo={codigo}
-        piso={piso}
-        numero={numero}
-        titulo="Agregar una persona como co-propietario"
-      />
-
-      <ModalControlUnidad
-        show={showAgregarInquilino}
-        onHide={handleCloseAgregarInquilino}
-        funcionControl={agregarInquilinoUnidad}
-        codigo={codigo}
-        piso={piso}
-        numero={numero}
-        titulo="Agregar una persona como co-inquilino"
-      />
-    </>
+    </div>
   );
 }
 export default ListarPersonas;

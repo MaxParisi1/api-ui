@@ -8,7 +8,7 @@ function LinkButton({ path, action, estilo,onClickFuncion }) {
         <button
           type="button"
           class="btn btn-outline-light btn-sm m-2 w-50"
-          style={{ color: "var(--bs-dropdown-link-color)", width:{estilo} }}
+          style={{ color: "var(--bs-dropdown-link-color)", border: "solid 1px #519657", }}
           onClick={onClickFuncion}
         >
           {action}

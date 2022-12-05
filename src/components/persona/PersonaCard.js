@@ -63,7 +63,7 @@ function PersonaCard({ persona, eliminarPersona, modificarPersona }) {
           <button
             onClick={handleClose}
             type="button"
-            class="btn"
+            class="btn btn-primary"
             data-bs-dismiss="modal"
           >
             {" "}

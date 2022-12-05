@@ -45,7 +45,7 @@ function App() {
                 element={<ListarPersonas />}
               />
             </Routes>
-          )}
+          )} 
         </main>
       </div>
     </Router>

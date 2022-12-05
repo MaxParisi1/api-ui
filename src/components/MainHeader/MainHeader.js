@@ -9,7 +9,7 @@ const MainHeader = () => {
   return (
     <div
       className="container-lg p-3 bg-purple-30 fondo"
-      style={{ backgroundColor: "#DEB887" }}
+      style={{ backgroundColor: "#81c784" }}
     >
       <div className="row ">
         <div
@@ -24,6 +24,7 @@ const MainHeader = () => {
           <div className=" text-center p-1">
             {ctx.isAdmin && <NavigationAdmin />}
             {!ctx.isAdmin && <Navigation />}
+          <NavigationAdmin />
             <button
               type="button"
               className="btn btn-outline-dark btn-sm mx-1"
@@ -32,7 +33,7 @@ const MainHeader = () => {
               Cerrar sesion
             </button>
           </div>
-        )}
+        )} 
       </div>
     </div>
   );
