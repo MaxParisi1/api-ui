@@ -235,6 +235,7 @@ function ReclamosAdmin() {
                   descripcion={reclamo.descripcion}
                   estado={reclamo.estado}
                   cambiarEstado={cambiarEstado}
+                  image={reclamo?.imagenes?.[0]?.path}
                 />
               ))
           : reclamos
@@ -250,6 +251,7 @@ function ReclamosAdmin() {
                   descripcion={reclamo.descripcion}
                   estado={reclamo.estado}
                   cambiarEstado={cambiarEstado}
+                  image={reclamo?.imagenes?.[0]?.path}
                 />
               ))}
       </div>
