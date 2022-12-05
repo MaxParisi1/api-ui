@@ -12,7 +12,7 @@ function ModalLiberarUnidad({show, onHide, liberarUnidad, codigo, piso, numero})
         <Modal.Body>Esta acción no se puede deshacer</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={onHide}>
-            Close
+            Cancelar
           </Button>
           <Button
             variant="primary"
@@ -21,7 +21,7 @@ function ModalLiberarUnidad({show, onHide, liberarUnidad, codigo, piso, numero})
               onHide();
             }}
           >
-            Guardar
+            Liberar
           </Button>
         </Modal.Footer>
       </Modal>

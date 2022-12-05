@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const NavigationAdmin = () => {
   return (
     <>
-      <div className=" text-center p-1">
+      <div className=" text-center p-1" style={{ display: "contents" }}>
         <button type="button" className="btn btn-outline-dark btn-sm mx-1">
           <Link to="/" className="text-decoration-none">
             <a
@@ -31,21 +31,15 @@ const NavigationAdmin = () => {
           </button>
         </Link>
 
-        {/* Edificios */}
-
         <Link to="/listaEdificios" className="text-decoration-none">
           <button
             type="button"
             className="dropdown btn btn-outline-dark btn-sm mx-1"
             style={{ backgroundColor: "transparent" }}
           >
-            Edificios
+            Edificios{" "}
           </button>
         </Link>
-
-        <button type="button" className="btn btn-outline-dark btn-sm mx-1">
-          Cerrar sesion
-        </button>
       </div>
     </>
   );

@@ -11,18 +11,19 @@ function ModalEliminarUnidad({ show, onHide, identificador, eliminarUnidad }) {
         </Modal.Header>
         <Modal.Body>Esta acción no se puede deshacer</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={onHide}>
-            Close
-          </Button>
-          <Button
-            variant="primary"
+        <Button
+            variant="secondary"
             onClick={() => {
               eliminarUnidad(identificador);
               onHide();
             }}
           >
-            Guardar
+            Eliminar
           </Button>
+          <Button variant="primary" onClick={onHide}>
+            Cancelar
+          </Button>
+          
         </Modal.Footer>
       </Modal>
     </>

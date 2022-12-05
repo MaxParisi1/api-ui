@@ -12,6 +12,7 @@ function ListaEdificios() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  
   useEffect(() => {
     servicioEdificio.getAllEdificios().then((response) => {
       setEdificios(response);

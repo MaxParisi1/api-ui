@@ -1,0 +1,791 @@
+{
+  "Edificios": [
+    {
+      "codigo": 1,
+      "nombre": "SLS Puerto Madero",
+      "direccion": "Mogliani 426"
+    },
+    {
+      "codigo": 2,
+      "nombre": "The Link Towers",
+      "direccion": "Arrayanes 1230"
+    },
+    {
+      "codigo": 3,
+      "nombre": "The Fire Place",
+      "direccion": "Bombares 50"
+    },
+    {
+      "codigo": 4,
+      "nombre": "Alvear Tower",
+      "direccion": "Alvear 100"
+    },
+    {
+      "codigo": 5,
+      "nombre": "Dique Dos",
+      "direccion": "Maquinista Savio 990"
+    },
+    {
+      "codigo": 6,
+      "nombre": "Libertador Plaza",
+      "direccion": "Libertador 5600"
+    },
+    {
+      "codigo": 7,
+      "nombre": "Chateau Libertador",
+      "direccion": "Libertador 5400"
+    },
+    {
+      "codigo": 8,
+      "nombre": "The Tower",
+      "direccion": "Parana 300"
+    },
+    {
+      "codigo": 9,
+      "nombre": "Lizard Plaza",
+      "direccion": "Av. Lizard 1000"
+    }
+  ],
+  "UnidadesEdificio1": [
+    {
+      "identificador": 1,
+      "piso": "10",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "CI 13230978"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 2,
+      "piso": "10",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "CPA3449614"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 3,
+      "piso": "10",
+      "numero": "4",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "CPA3992034"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 4,
+      "piso": "10",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI29988738"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 5,
+      "piso": "10",
+      "numero": "2",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30012288"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 6,
+      "piso": "10",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30108780"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 7,
+      "piso": "9",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30161468"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 8,
+      "piso": "9",
+      "numero": "5",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30306216"
+      ],
+      "documentoInquilinos": [
+        "CI 13230978"
+      ]
+    },
+    {
+      "identificador": 9,
+      "piso": "9",
+      "numero": "4",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30314545"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 10,
+      "piso": "9",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30444780"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 11,
+      "piso": "9",
+      "numero": "2",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30600888",
+        "CI 13230978"
+      ],
+      "documentoInquilinos": [
+        "CI 13230978"
+      ]
+    },
+    {
+      "identificador": 12,
+      "piso": "9",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30609972"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 13,
+      "piso": "8",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30610075"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 14,
+      "piso": "8",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30616697"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 15,
+      "piso": "8",
+      "numero": "4",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30647320"
+      ],
+      "documentoInquilinos": [
+        "CPA3449614"
+      ]
+    },
+    {
+      "identificador": 16,
+      "piso": "8",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30662769"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 17,
+      "piso": "8",
+      "numero": "2",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30667193"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 18,
+      "piso": "8",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30667543"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 19,
+      "piso": "7",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30667668"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 20,
+      "piso": "7",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30669003"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 21,
+      "piso": "7",
+      "numero": "4",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30669025",
+        "CPA3449614"
+      ],
+      "documentoInquilinos": [
+        "CPA3449614"
+      ]
+    },
+    {
+      "identificador": 22,
+      "piso": "7",
+      "numero": "3",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30669045"
+      ],
+      "documentoInquilinos": [
+        "CPA3992034"
+      ]
+    },
+    {
+      "identificador": 23,
+      "piso": "7",
+      "numero": "2",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30677633"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 24,
+      "piso": "7",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30693556"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 25,
+      "piso": "6",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30702760"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 26,
+      "piso": "6",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30706611"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 27,
+      "piso": "6",
+      "numero": "4",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30708216"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 28,
+      "piso": "6",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30722035"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 29,
+      "piso": "6",
+      "numero": "2",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30722275"
+      ],
+      "documentoInquilinos": [
+        "DNI29988738"
+      ]
+    },
+    {
+      "identificador": 30,
+      "piso": "6",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30724625"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 31,
+      "piso": "5",
+      "numero": "6",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30724661",
+        "CPA3992034"
+      ],
+      "documentoInquilinos": [
+        "CPA3992034"
+      ]
+    },
+    {
+      "identificador": 32,
+      "piso": "5",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30724804"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 33,
+      "piso": "5",
+      "numero": "4",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30732736"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 34,
+      "piso": "5",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30733306"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 35,
+      "piso": "5",
+      "numero": "2",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30733857"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 36,
+      "piso": "5",
+      "numero": "1",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30734053"
+      ],
+      "documentoInquilinos": [
+        "DNI30012288"
+      ]
+    },
+    {
+      "identificador": 37,
+      "piso": "4",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30734099"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 38,
+      "piso": "4",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30734108"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 39,
+      "piso": "4",
+      "numero": "4",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30734206"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 40,
+      "piso": "4",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30734279"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 41,
+      "piso": "4",
+      "numero": "2",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30744673",
+        "DNI29988738"
+      ],
+      "documentoInquilinos": [
+        "DNI29988738"
+      ]
+    },
+    {
+      "identificador": 42,
+      "piso": "4",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30745281"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 43,
+      "piso": "3",
+      "numero": "6",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30746040"
+      ],
+      "documentoInquilinos": [
+        "DNI30108780"
+      ]
+    },
+    {
+      "identificador": 44,
+      "piso": "3",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30778776"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 45,
+      "piso": "3",
+      "numero": "4",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30780521"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 46,
+      "piso": "3",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30797973"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 47,
+      "piso": "3",
+      "numero": "2",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30800519"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 48,
+      "piso": "3",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30814171"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 49,
+      "piso": "2",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30816148"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 50,
+      "piso": "2",
+      "numero": "5",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30816380"
+      ],
+      "documentoInquilinos": [
+        "DNI30161468",
+        "CI 13230978"
+      ]
+    },
+    {
+      "identificador": 51,
+      "piso": "2",
+      "numero": "4",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30819573",
+        "DNI30012288"
+      ],
+      "documentoInquilinos": [
+        "DNI30012288"
+      ]
+    },
+    {
+      "identificador": 52,
+      "piso": "2",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30819675"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 54,
+      "piso": "2",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30825207"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 55,
+      "piso": "1",
+      "numero": "6",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30825297"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 56,
+      "piso": "1",
+      "numero": "5",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30825333"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 57,
+      "piso": "1",
+      "numero": "4",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30829123"
+      ],
+      "documentoInquilinos": [
+        "DNI30306216"
+      ]
+    },
+    {
+      "identificador": 58,
+      "piso": "1",
+      "numero": "3",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30829463"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 59,
+      "piso": "1",
+      "numero": "2",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30830380"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 60,
+      "piso": "1",
+      "numero": "1",
+      "habitado": "N",
+      "codigoEdificio": 1,
+      "documentoDuenios": [
+        "DNI30830509"
+      ],
+      "documentoInquilinos": []
+    },
+    {
+      "identificador": 1592,
+      "piso": "66",
+      "numero": "66",
+      "habitado": "S",
+      "codigoEdificio": 1,
+      "documentoDuenios": [],
+      "documentoInquilinos": []
+    }
+  ],
+  "HABITANTES": [
+    {
+      "documento": "CI 13230978",
+      "nombre": "BANEGAS, MAURICIO             ",
+      "contrasenia": null,
+      "admin": false
+    },
+    {
+      "documento": "CPA3449614",
+      "nombre": "BRITEZ, BLAS                  ",
+      "contrasenia": null,
+      "admin": false
+    },
+    {
+      "documento": "CPA3992034",
+      "nombre": "GARCETE, FELIPE               ",
+      "contrasenia": null,
+      "admin": false
+    },
+    {
+      "documento": "DNI29988738",
+      "nombre": "MARTINEZ, JUAN                ",
+      "contrasenia": null,
+      "admin": false
+    },
+    {
+      "documento": "DNI30012288",
+      "nombre": "RODRIGUEZ, RAMIRO             ",
+      "contrasenia": null,
+      "admin": false
+    },
+    {
+      "documento": "DNI30108780",
+      "nombre": "FLORES, SERGIO                ",
+      "contrasenia": null,
+      "admin": false
+    },
+    {
+      "documento": "DNI30161468",
+      "nombre": "GONZALEZ, EMMANUEL            ",
+      "contrasenia": null,
+      "admin": false
+    },
+    {
+      "documento": "DNI30306216",
+      "nombre": "RIVAS, NICOLAS                ",
+      "contrasenia": null,
+      "admin": false
+    }
+  ]
+}

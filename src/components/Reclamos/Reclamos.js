@@ -75,10 +75,10 @@ const Reclamos = () => {
         <h1 className="py-4">
           <i className="bi bi-clipboard2-minus p-2"></i>Mis reclamos
         </h1>
-
-        <h4 className="p-2">
+    <h1>ANA</h1>
+        {/* <h4 className="p-2">
           <i className="bi bi-funnel"></i>Filtrar por:
-        </h4>
+        </h4> */}
         <Dropdown
           menu={{
             items,
@@ -87,10 +87,18 @@ const Reclamos = () => {
             onClick,
           }}
         >
-          <Typography.Link>
+          <Typography.Link className="d-flex w-50">
+            <h4>
+              <i className="bi bi-funnel"></i>
+              Filtrar por estado:{" "}
+              <i
+                class="bi bi-chevron-down"
+                style={{ verticalAlign: "middle", marginRight: "2px" }}
+              ></i>
+              </h4>
+
             <Space>
-              Estado: {estado}
-              <DownOutlined />
+              <h5>{estado}</h5>
             </Space>
           </Typography.Link>
         </Dropdown>

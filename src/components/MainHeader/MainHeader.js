@@ -9,7 +9,7 @@ const MainHeader = () => {
   return (
     <div
       className="container-lg p-3 bg-purple-30 fondo"
-      style={{ backgroundColor: "#DEB887" }}
+      style={{ backgroundColor: "#81c784" }}
     >
       <div className="row ">
         <div
@@ -32,7 +32,7 @@ const MainHeader = () => {
               Cerrar sesion
             </button>
           </div>
-        )}
+        )} 
       </div>
     </div>
   );

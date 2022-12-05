@@ -4,7 +4,7 @@ export class Home extends Component {
   render() {
     return (
       <div className="homepage">
-        {/* VER COMO CENTRAR LA CARTA */}
+
         <div className="mt-4" style={{ justifyContent: "space-between" }}>
           <div
             className="card mb-3 align-self-center"
