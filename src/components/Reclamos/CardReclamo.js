@@ -19,6 +19,10 @@ function CardReclamo({
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [showImagen, setShowImagen] = useState(false);
+  const handleCloseImagen = () => setShowImagen(false);
+  const handleShowImagen = () => setShowImagen(true);
+
   const handleValue = () => {
     var optionSelect = document.getElementById("FormSelect");
     var text = optionSelect.options[optionSelect.selectedIndex].text;
@@ -139,14 +143,14 @@ function CardReclamo({
               color: "var(--bs-dropdown-link-color)",
               border: "solid 1px #519657",
             }}
-            onClick={handleShow}
+            onClick={handleShowImagen}
           >
             Ver imagenes
           </button>
 
           <Modal
-            show={show}
-            onHide={handleClose}
+            show={showImagen}
+            onHide={handleCloseImagen}
             className="modal fade"
             id="exampleModal"
             tabIndex="-1"
