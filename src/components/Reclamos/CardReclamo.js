@@ -42,7 +42,7 @@ function CardReclamo({
         <p className="card-text">Edificio: {codigoEdificio}</p>
       </div>
       <div className="card-body">
-        <p className="card-text">Unidad: {identificador}</p>
+        <p className="card-text">Unidad: {identificador == null ? "Area comun" : identificador}</p>
       </div>
       <div className="card-body">
         <p className="card-text">Ubicacion: {ubicacion}</p>

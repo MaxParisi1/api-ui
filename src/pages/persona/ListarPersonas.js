@@ -69,19 +69,27 @@ function ListarPersonas() {
 
   const liberarUnidad = (codigo, piso, numero) => {
     unidadServicio.liberarUnidad(codigo, piso, numero).then((response) => {
-      window.location.reload();
+      setinquilinos([]);
     });
   };
 
   const transferirUnidad = (codigo, piso, numero, documento) => {
-    unidadServicio.transferirUnidad(codigo, piso, numero, documento);
+    unidadServicio
+      .transferirUnidad(codigo, piso, numero, documento)
+      .then((response) => {
+        personaServicio.getPersona(documento).then((responseP) => {
+          setDuenios([...duenios, responseP]);
+        });
+      });
   };
 
   const alquilarUnidad = (codigo, piso, numero, documento) => {
     unidadServicio
       .alquilarUnidad(codigo, piso, numero, documento)
       .then((response) => {
-        window.location.reload();
+        personaServicio.getPersona(documento).then((responseP) => {
+          setinquilinos([...inquilinos, responseP]);
+        });
       })
       .catch(function (error) {
         alert(error.response.data);
@@ -91,6 +99,11 @@ function ListarPersonas() {
   const agregarDuenioUnidad = (codigo, piso, numero, documento) => {
     unidadServicio
       .agregarDuenioUnidad(codigo, piso, numero, documento)
+      .then((response) => {
+        personaServicio.getPersona(documento).then((responseP) => {
+          setDuenios([...duenios, responseP]);
+        });
+      })
       .catch(function (error) {
         alert(error.response.data);
       });
@@ -99,6 +112,11 @@ function ListarPersonas() {
   const agregarInquilinoUnidad = (codigo, piso, numero, documento) => {
     unidadServicio
       .agregarInquilinoUnidad(codigo, piso, numero, documento)
+      .then((response) => {
+        personaServicio.getPersona(documento).then((responseP) => {
+          setinquilinos([...inquilinos, responseP]);
+        });
+      })
       .catch(function (error) {
         alert(error.response.data);
       });

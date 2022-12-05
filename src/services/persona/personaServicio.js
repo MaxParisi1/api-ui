@@ -12,11 +12,16 @@ const updatePersona = (documento, newObject) => {
     return request.then((response) => response);
   }
 
-
+  const getPersona = (documento) => {
+    const request = axios.get(`${baseUrl}/${documento}`);
+    return request.then((response) => response);
+  }
 
 const personaServicio = {
     updatePersona: updatePersona,
     deletePersona: deletePersona,
+    getPersona:getPersona,
+    
 
   };
   

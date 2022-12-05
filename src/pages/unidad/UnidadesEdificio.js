@@ -30,7 +30,9 @@ function UnidadesEdificio() {
 
   const crearUnidad = (unidadNueva) => {
     unidadNueva.codigoEdificio = codigo;
-    unidadServicio.createUnidad(unidadNueva);
+    unidadServicio.createUnidad(unidadNueva).catch(function (error) {
+      alert(error.response.data);
+    });
   };
 
   const modificarUnidad = (identificador, unidad) => {

@@ -33,7 +33,9 @@ function ListaEdificios() {
   };
 
   const crearEdificio = (edificio) => {
-    servicioEdificio.createEdificio(edificio);
+    servicioEdificio.createEdificio(edificio).catch(function (error) {
+      alert(error.response.data);
+    });
   };
 
   const modificarEdificio = (codigo, datos) => {
