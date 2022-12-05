@@ -117,8 +117,8 @@ const Reclamos = () => {
                   identificador={`Piso ${reclamo?.identificador?.piso} Nº ${reclamo?.identificador?.numero}`}
                   estado={`Estado: ${reclamo?.estado}`}
                 />
-              ))
-          : reclamos?.map((reclamo) => (
+               )) 
+            : reclamos?.map((reclamo) => (
               <ReclamoCard
                 key={reclamo?.idReclamo}
                 id={reclamo?.idReclamo}

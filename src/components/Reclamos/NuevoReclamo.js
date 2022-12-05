@@ -201,16 +201,22 @@ function NuevoReclamo() {
       {unidadesView && (
         <div
           className="w-100 w-md-50"
-          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%" }}
+          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%",textAlignLast: "center" }}
         >
-          <NormalButton
-            onClickFuncion={() => {
+
+          <button class="btn btn-outline-light btn-sm m-2"
+              style={{
+                color: "var(--bs-dropdown-link-color)",
+                border: "solid 1px #519657",
+              }}
+         OnClick={() => {
               setReclamosComunView(true);
               setUnidadesView(false);
               fetchDataReclamosComunes(codigoEdificioActual);
-            }}
-            accion={"Reclamos Comunes"}
-          />
+            }}>
+            Crear nuevo Reclamo Comun
+          </button>
+          
         </div>
       )}
       {unidadesView && (

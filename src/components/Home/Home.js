@@ -1,5 +1,6 @@
-import React, { Component, Link } from "react";
+import React, { Component } from "react";
 import NormalButton from '../Utils/NormalButton';
+import { Link } from "react-router-dom";
 
 export class Home extends Component {
   render() {
@@ -7,6 +8,8 @@ export class Home extends Component {
       <div className="homepage">
         <div className="mt-4" style={{ justifyContent: "space-between" }}>
 
+        <div style={{textAlignLast: "center"}}> 
+        </div>
 
           <div
             className="card mb-3 align-self-center"
