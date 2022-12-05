@@ -23,7 +23,7 @@ function App() {
               <Route exact path="/reclamos" element={<Reclamos />} />
               <Route exact path="/reclamo" element={<NuevoReclamo />} />
             </Routes>
-          )} 
+          )}
         </main>
       </div>
     </Router>

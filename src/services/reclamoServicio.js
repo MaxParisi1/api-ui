@@ -5,7 +5,7 @@ const getReclamosPorDocumento = async (documento) => {
   const request = await axios
     .get(`http://localhost:8080/api/reclamo/persona/${documento}`)
     .then((res) => (response = res.data))
-    .catch((err) => console.log(err));
+    .catch((err) => response);
   return response;
 };
 
@@ -14,7 +14,7 @@ const getReclamosComunesPorEdificio = async (codigo) => {
   const request = await axios
     .get(`http://localhost:8080/api/reclamo/edificio/${codigo}/comunes`)
     .then((res) => (response = res.data))
-    .catch((err) => console.log(err));
+    .catch((err) => response);
   return response;
 };
 
@@ -25,7 +25,7 @@ const getReclamosPorUnidad = async (codigo, piso, numero) => {
       `http://localhost:8080/api/reclamo/unidad?codigo=${codigo}&piso=${piso}&numero=${numero}`
     )
     .then((res) => (response = res.data))
-    .catch((err) => console.log(err));
+    .catch((err) => response);
 
   return response;
 };
@@ -50,7 +50,7 @@ const agregarReclamo = async (
   const request = await axios
     .post("http://localhost:8080/api/reclamo/agregar?" + params)
     .then((res) => (response = res.data))
-    .catch((err) => console.log(err));
+    .catch((err) => response);
   return response;
 };
 
@@ -70,7 +70,20 @@ const agregarReclamoComun = async (
   const request = await axios
     .post("http://localhost:8080/api/reclamo/agregar?" + params)
     .then((res) => (response = res.data))
-    .catch((err) => console.log(err));
+    .catch((err) => response);
+  return response;
+};
+
+const agregarImagenReclamo = async (id, path, tipo) => {
+  const params = new URLSearchParams({
+    path: path,
+    tipo: tipo,
+  }).toString();
+  let response;
+  const request = await axios
+    .put(`http://localhost:8080/api/reclamo/${id}/imagen?` + params)
+    .then((res) => (response = res.data))
+    .catch((err) => response);
   return response;
 };
 
@@ -80,6 +93,7 @@ const reclamoServicio = {
   agregarReclamo,
   getReclamosComunesPorEdificio,
   agregarReclamoComun,
+  agregarImagenReclamo,
 };
 
 export default reclamoServicio;
