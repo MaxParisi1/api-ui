@@ -11,6 +11,8 @@ import ModalControlUnidad from "../../components/unidad/ModalControlUnidad";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import ModalCrearPersona from "../../components/persona/ModalCrearPersona";
+import ModalMensajeExito from "../../components/persona/ModalMensajeExito";
 
 function ListarPersonas() {
   const { codigo, piso, numero, identificador } = useParams();
@@ -36,6 +38,14 @@ function ListarPersonas() {
   const [showAgregarInquilino, setShowAgregarInquilino] = useState(false);
   const handleCloseAgregarInquilino = () => setShowAgregarInquilino(false);
   const handleShowAgregarInquilino = () => setShowAgregarInquilino(true);
+
+  const [showCrearPersona, setShowCrearPersona] = useState(false);
+  const handleCloseCrearPersona = () => setShowCrearPersona(false);
+  const handleShowCrearPersona = () => setShowCrearPersona(true);
+
+  const [showCrearPersonaExito, setShowCrearPersonaExito] = useState(false);
+  const handleCloseCrearPersonaExito = () => setShowCrearPersonaExito(false);
+  const handleShowCrearPersonaExito = () => setShowCrearPersonaExito(true);
 
   useEffect(() => {
     unidadServicio.getDuenios(codigo, piso, numero).then((response) => {
@@ -122,6 +132,12 @@ function ListarPersonas() {
       });
   };
 
+  const crearPersona = (persona) => {
+    personaServicio.createPersona(persona).then((response) => {
+      handleShowCrearPersonaExito();
+    });
+  };
+
   return (
     <div>
       <h2 className="mt-4 ml-5">Detalle de la unidad</h2>
@@ -132,20 +148,23 @@ function ListarPersonas() {
         <div className="d-flex=row">
           <Row className="d-flex ">
             <Col>
-              <h6 className="d-flex" style={{ marginBottom: "7%" }}>
+              <h6 className="d-flex" style={{ marginTop: "4%" }}>
                 Eliminar todos los inquilinos de una unidad:{" "}
               </h6>
-              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+              <h6 className="d-flex" style={{ marginTop: "9%" }}>
                 Transfiere la propiedad de una unidad:{" "}
               </h6>
-              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+              <h6 className="d-flex" style={{ marginTop: "9%" }}>
                 Alquilar una unidad vacia:
               </h6>
-              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+              <h6 className="d-flex" style={{ marginTop: "9%" }}>
                 Agregar otro duenio a una unidad:
               </h6>
-              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+              <h6 className="d-flex" style={{ marginTop: "9%" }}>
                 Agregar otro inquilino a una unidad:
+              </h6>
+              <h6 className="d-flex" style={{ marginTop: "8%",marginBottom: "10%" }}>
+                Crear una nueva persona
               </h6>
             </Col>
 
@@ -171,6 +190,10 @@ function ListarPersonas() {
               <NormalButton
                 onClickFuncion={handleShowAgregarInquilino}
                 accion="Agregar Inquilino"
+              />
+              <NormalButton
+                onClickFuncion={handleShowCrearPersona}
+                accion="Crear Persona"
               />
             </Col>
           </Row>
@@ -245,6 +268,17 @@ function ListarPersonas() {
           piso={piso}
           numero={numero}
           titulo="Agregar una persona como co-inquilino"
+        />
+
+        <ModalCrearPersona
+          show={showCrearPersona}
+          onHide={handleCloseCrearPersona}
+          crearPersona={crearPersona}
+        />
+
+        <ModalMensajeExito
+          show={showCrearPersonaExito}
+          onHide={handleCloseCrearPersonaExito}
         />
       </div>
     </div>
