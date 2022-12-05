@@ -18,9 +18,9 @@ const GenerarReclamoComun = (props) => {
       event.target.ubicacion.value,
       event.target.descripcion.value
     );
+    info(numero);
     const imagen = await profileUpload(logo);
     reclamoServicio.agregarImagenReclamo(numero, imagen, "jpg");
-    info(numero);
   };
 
   const profileUpload = async (file) => {
