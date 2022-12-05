@@ -46,6 +46,35 @@ const edificiosFiltroAUX = [
     key: "3",
     label: "The Link Towers",
   },
+  {
+    key: "4",
+    label: "The Fire Place",
+  },
+  {
+    key: "5",
+    label: "Alvear Tower",
+  },
+  {
+    key: "6",
+    label: "Dique Dos",
+  },
+  ,
+  {
+    key: "7",
+    label: "Libertador Plaza",
+  },
+  {
+    key: "8",
+    label: "Chateau Libertador",
+  },
+  {
+    key: "9",
+    label: "The Tower",
+  },
+  {
+    key: "10",
+    label: "Lizard Plaza",
+  },
 ];
 
 function ReclamosAdmin() {
@@ -88,8 +117,8 @@ function ReclamosAdmin() {
   useEffect(() => {
     reclamoServicio.getReclamoEstado(estado).then((response) => {
       setReclamos(response);
-      console.log("RECLAMOS")
-      console.log(response)
+      console.log("RECLAMOS");
+      console.log(response);
     });
   }, [estado, edificioFiltro, reclamos]);
 
@@ -110,10 +139,6 @@ function ReclamosAdmin() {
   };
 
   const onClickEdificios = ({ key }) => {
-    console.log("DIC DESDE ONCLICK");
-    console.log(dicOnclickEdificio);
-    setEdificioFiltro(dicOnclickEdificio[key]);
-    /*
     if (key === "1") {
       setEdificioFiltro("todos");
     } else if (key === "2") {
@@ -132,8 +157,9 @@ function ReclamosAdmin() {
       setEdificioFiltro("7");
     }else if (key === "9") {
       setEdificioFiltro("8");
+    }else if (key === "10") {
+      setEdificioFiltro("9");
     }
-    */
   };
 
   const cambiarEstado = (idReclamo, estado) => {
@@ -158,19 +184,19 @@ function ReclamosAdmin() {
               onClick,
             }}
           >
-          <Typography.Link className="d-flex w-50">
-            <h4>
-              <i className="bi bi-funnel"></i>
-              Filtrar por estado:{" "}
-              <i
-                class="bi bi-chevron-down"
-                style={{ verticalAlign: "middle", marginRight: "10px" }}
-              ></i>
+            <Typography.Link className="d-flex w-50">
+              <h4>
+                <i className="bi bi-funnel"></i>
+                Filtrar por estado:{" "}
+                <i
+                  class="bi bi-chevron-down"
+                  style={{ verticalAlign: "middle", marginRight: "10px" }}
+                ></i>
               </h4>
               <Space>
-              <h5>{estado}</h5>
-            </Space>
-          </Typography.Link>
+                <h5>{estado}</h5>
+              </Space>
+            </Typography.Link>
           </Dropdown>
 
           <Dropdown
@@ -181,19 +207,18 @@ function ReclamosAdmin() {
             }}
           >
             <Typography.Link className="d-flex w-50">
-            <h4>
-              <i className="bi bi-funnel"></i>
-              Filtrar por edificio:{" "}
-              <i
-                class="bi bi-chevron-down"
-                style={{ verticalAlign: "middle", marginRight: "10px" }}
-              ></i>
+              <h4>
+                <i className="bi bi-funnel"></i>
+                Filtrar por edificio:{" "}
+                <i
+                  class="bi bi-chevron-down"
+                  style={{ verticalAlign: "middle", marginRight: "10px" }}
+                ></i>
               </h4>
               <Space>
-              <h5>{edificioFiltro}</h5>
-            </Space>
-          </Typography.Link>
-          
+                <h5>{edificioFiltro}</h5>
+              </Space>
+            </Typography.Link>
           </Dropdown>
         </h4>
       </div>
@@ -207,15 +232,15 @@ function ReclamosAdmin() {
               )
               .map((reclamo) => (
                 <CardReclamo
-                  key={reclamo.idReclamo}
-                  id={reclamo.idReclamo}
-                  documento={reclamo.documento}
-                  nombreEdificio={reclamo.codigo.nombre}
-                  identificador={reclamo.identificador}
-                  ubicacion={reclamo.ubicacion}
-                  descripcion={reclamo.descripcion}
-                  estado={reclamo.estado}
-                  cambiarEstado={cambiarEstado}
+                key={reclamo.idReclamo}
+                id={reclamo.idReclamo}
+                documento={reclamo.documento}
+                codigoEdificio={reclamo.codigo}
+                identificador={reclamo.identificador}
+                ubicacion={reclamo.ubicacion}
+                descripcion={reclamo.descripcion}
+                estado={reclamo.estado}
+                cambiarEstado={cambiarEstado}
                 />
               ))
           : reclamos
