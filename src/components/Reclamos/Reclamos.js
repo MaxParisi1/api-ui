@@ -92,7 +92,7 @@ const Reclamos = () => {
                 Filtrar por estado:{" "}
                 <i
                   class="bi bi-chevron-down"
-                  style={{ verticalAlign: "middle" }}
+                  style={{ verticalAlign: "middle", marginRight: "2px" }}
                 ></i>
               </h4>
 
