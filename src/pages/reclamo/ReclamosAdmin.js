@@ -49,7 +49,7 @@ const edificiosFiltroAUX = [
 ];
 
 function ReclamosAdmin() {
-  const [reclamos, setReclamos] = useState([{}]);
+  const [reclamos, setReclamos] = useState([]);
   const [estado, setEstado] = useState("");
   const [edificioFiltro, setEdificioFiltro] = useState("");
   var dicOnclickEdificio = {};
@@ -88,6 +88,8 @@ function ReclamosAdmin() {
   useEffect(() => {
     reclamoServicio.getReclamoEstado(estado).then((response) => {
       setReclamos(response);
+      console.log("RECLAMOS")
+      console.log(response)
     });
   }, [estado, edificioFiltro, reclamos]);
 
@@ -207,7 +209,7 @@ function ReclamosAdmin() {
                   key={reclamo.idReclamo}
                   id={reclamo.idReclamo}
                   documento={reclamo.documento}
-                  codigoEdificio={reclamo.codigo}
+                  nombreEdificio={reclamo.codigo.nombre}
                   identificador={reclamo.identificador}
                   ubicacion={reclamo.ubicacion}
                   descripcion={reclamo.descripcion}

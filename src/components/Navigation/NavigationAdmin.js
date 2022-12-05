@@ -33,27 +33,15 @@ const NavigationAdmin = () => {
 
         {/* Edificios */}
 
-        <Dropdown as={ButtonGroup}>
-          <Dropdown.Toggle
-            id="dropdown-custom-1"
-            className="dropdown btn btn-outline-dark dropdown-toggle btn-sm mx-1"
+        <Link to="/listaEdificios" className="text-decoration-none">
+          <button
+            type="button"
+            className="dropdown btn btn-outline-dark btn-sm mx-1"
             style={{ backgroundColor: "transparent" }}
           >
             Edificios
-          </Dropdown.Toggle>
-          <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="/crearEdificio" className="text-decoration-none">
-                <a className="dropdown-item ">Añadir nuevo</a>
-              </Link>
-            </Dropdown.Item>
-            <Dropdown.Item>
-              <Link to="/listaEdificios" className="text-decoration-none">
-                <a className="dropdown-item ">Ver todos</a>
-              </Link>
-            </Dropdown.Item>
-          </Dropdown.Menu>
-        </Dropdown>
+          </button>
+        </Link>
 
         <button type="button" className="btn btn-outline-dark btn-sm mx-1">
           Cerrar sesion

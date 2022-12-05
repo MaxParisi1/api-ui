@@ -7,6 +7,12 @@ const getReclamoEstado = (estado) => {
   return request.then((response) => response.data);
 };
 
+const getReclamoEstadoCompleto = (estado) => {
+  console.log(estado)
+  const request = axios.get(`${baseUrl}/estadoCompleto?estado=${estado}`);
+  return request.then((response) => response.data);
+};
+
 const cambiarEstado = (idReclamo, estado) => {
   const request = axios.put(
     `${baseUrl}/${idReclamo}/cambiarEstado?estado=${estado}`
@@ -17,6 +23,7 @@ const cambiarEstado = (idReclamo, estado) => {
 const reclamoServicio = {
   getReclamoEstado,
   cambiarEstado,
+  getReclamoEstadoCompleto,
 };
 
 export default reclamoServicio;
