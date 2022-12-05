@@ -65,13 +65,11 @@ function ListarPersonas() {
 
   const modificarPersona = (documento, persona) => {
     personaServicio.updatePersona(documento, persona).then((response) => {
-      console.log(response);
     });
   };
 
   const liberarUnidad = (codigo, piso, numero) => {
     unidadServicio.liberarUnidad(codigo, piso, numero).then((response) => {
-      console.log(response);
       setinquilinos([])
     });
   };
@@ -83,7 +81,6 @@ function ListarPersonas() {
         personaServicio.getPersona(documento).then((responseP) => {
           setDuenios([...duenios, responseP]);
         });
-        console.log(response);
       });
   };
 
@@ -96,7 +93,6 @@ function ListarPersonas() {
         });
       })
       .catch(function (error) {
-        console.log(error.response.data);
         alert(error.response.data);
       });
   };
@@ -110,7 +106,6 @@ function ListarPersonas() {
         });
       })
       .catch(function (error) {
-        console.log(error.response.data);
         alert(error.response.data);
       });
   };
@@ -124,7 +119,6 @@ function ListarPersonas() {
         });
       })
       .catch(function (error) {
-        console.log(error.response.data);
         alert(error.response.data);
       });
   };
