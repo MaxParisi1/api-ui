@@ -1,10 +1,14 @@
 import React, { useContext } from "react";
 import { Modal } from "antd";
+import Axios from "axios";
 import reclamoServicio from "../../services/reclamoServicio";
 import AuthContext from "../../store/auth-context";
+import { useState } from "react";
+import ImagenReclamo from "./ImagenReclamo";
 
 const GenerarReclamo = (props) => {
   const ctx = useContext(AuthContext);
+  const [logo, setLogo] = useState("");
 
   const handleEnviar = async (event) => {
     event.preventDefault();
@@ -16,7 +20,23 @@ const GenerarReclamo = (props) => {
       event.target.ubicacion.value,
       event.target.descripcion.value
     );
+    const imagen = await profileUpload(logo);
+    reclamoServicio.agregarImagenReclamo(numero, imagen, "jpg");
     info(numero);
+  };
+
+  const profileUpload = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "htdsqrik");
+    let data = "";
+    await Axios.post(
+      "https://api.cloudinary.com/v1_1/dbxxr6sg6/image/upload",
+      formData
+    ).then((response) => {
+      data = response.data["secure_url"];
+    });
+    return data;
   };
 
   const info = (numero) => {
@@ -99,12 +119,7 @@ const GenerarReclamo = (props) => {
           ></textarea>
         </div>
 
-        <div className="mb-3">
-          <label htmlFor="formFile" className="form-label">
-            Imagen
-          </label>
-          <input className="form-control" type="file" id="formFile" />
-        </div>
+        <ImagenReclamo logoHandler={setLogo} />
 
         {/* Button trigger modal */}
         <button

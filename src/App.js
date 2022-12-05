@@ -23,7 +23,11 @@ function App() {
               <Route exact path="/reclamos" element={<Reclamos />} />
               <Route exact path="/reclamo" element={<NuevoReclamo />} />
             </Routes>
+<<<<<<< HEAD
             )}  
+=======
+          )}
+>>>>>>> 2e46ac9ebcaf70c29ff04cd39a55aa128f572048
         </main>
       </div>
     </Router>
