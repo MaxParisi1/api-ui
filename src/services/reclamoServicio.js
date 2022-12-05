@@ -50,7 +50,8 @@ const agregarReclamo = async (
   const request = await axios
     .post("http://localhost:8080/api/reclamo/agregar?" + params)
     .then((res) => (response = res.data))
-    .catch((err) => response);
+    .catch((err) => (response = -1));
+  console.log(response);
   return response;
 };
 
@@ -70,7 +71,8 @@ const agregarReclamoComun = async (
   const request = await axios
     .post("http://localhost:8080/api/reclamo/agregar?" + params)
     .then((res) => (response = res.data))
-    .catch((err) => response);
+    .catch((err) => (response = -1));
+  console.log(request);
   return response;
 };
 

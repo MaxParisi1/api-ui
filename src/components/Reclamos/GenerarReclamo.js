@@ -20,9 +20,12 @@ const GenerarReclamo = (props) => {
       event.target.ubicacion.value,
       event.target.descripcion.value
     );
-    const imagen = await profileUpload(logo);
-    reclamoServicio.agregarImagenReclamo(numero, imagen, "jpg");
-    info(numero);
+    console.log(numero);
+    numero === -1 ? error() : info(numero);
+    if (numero !== -1) {
+      const imagen = await profileUpload(logo);
+      reclamoServicio.agregarImagenReclamo(numero, imagen, "jpg");
+    }
   };
 
   const profileUpload = async (file) => {
@@ -47,6 +50,18 @@ const GenerarReclamo = (props) => {
           <p>El codido del reclamo es: {numero}</p>
         </div>
       ),
+      centered: true,
+      onOk() {
+        props.endCreate();
+      },
+    });
+  };
+
+  const error = () => {
+    Modal.error({
+      title: "No se ha podido generar el reclamo!",
+      content:
+        "No puede generar un reclamos si su unidad se encuentra alquilada",
       centered: true,
       onOk() {
         props.endCreate();
