@@ -176,5 +176,4 @@ function CardReclamo({
     </div>
   );
 }
-
 export default CardReclamo;

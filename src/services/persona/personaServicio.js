@@ -17,12 +17,16 @@ const updatePersona = (documento, newObject) => {
     return request.then((response) => response);
   }
 
+  const createPersona = (newObject) => {
+    const request = axios.post(baseUrl, newObject)
+    return request.then((response) => response);
+  }
+
 const personaServicio = {
     updatePersona: updatePersona,
     deletePersona: deletePersona,
     getPersona:getPersona,
-    
-
+    createPersona:createPersona,
   };
   
   export default personaServicio;
