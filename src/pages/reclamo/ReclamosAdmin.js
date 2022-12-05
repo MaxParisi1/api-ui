@@ -101,24 +101,18 @@ function ReclamosAdmin() {
         });
       });
 
-      console.log("ARRAY EDIFICO");
-      console.log(arrayEdificio);
-
       dicOnclickEdificio["1"] = "todos";
       var aux = 2;
       arrayEdificio.forEach((x) => {
         dicOnclickEdificio[aux] = (aux - 1).toString();
         aux += 1;
       });
-      console.log(dicOnclickEdificio);
     });
   }, []);
 
   useEffect(() => {
     reclamoServicio.getReclamoEstado(estado).then((response) => {
       setReclamos(response);
-      console.log("RECLAMOS");
-      console.log(response);
     });
   }, [estado, edificioFiltro]);
 
@@ -163,9 +157,7 @@ function ReclamosAdmin() {
   };
 
   const cambiarEstado = (idReclamo, estado) => {
-    reclamoServicio.cambiarEstado(idReclamo, estado).then((response) => {
-      console.log(response);
-    });
+    reclamoServicio.cambiarEstado(idReclamo, estado).then((response) => {});
   };
 
   return (
@@ -189,7 +181,7 @@ function ReclamosAdmin() {
                 <i className="bi bi-funnel"></i>
                 Filtrar por estado:{" "}
                 <i
-                  class="bi bi-chevron-down"
+                  className="bi bi-chevron-down"
                   style={{ verticalAlign: "middle", marginRight: "10px" }}
                 ></i>
               </h4>
@@ -211,7 +203,7 @@ function ReclamosAdmin() {
                 <i className="bi bi-funnel"></i>
                 Filtrar por edificio:{" "}
                 <i
-                  class="bi bi-chevron-down"
+                  className="bi bi-chevron-down"
                   style={{ verticalAlign: "middle", marginRight: "10px" }}
                 ></i>
               </h4>

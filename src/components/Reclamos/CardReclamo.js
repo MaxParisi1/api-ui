@@ -11,7 +11,7 @@ function CardReclamo({
   ubicacion,
   descripcion,
   estado,
-  cambiarEstado
+  cambiarEstado,
 }) {
   const [show, setShow] = useState(false);
 
@@ -21,12 +21,12 @@ function CardReclamo({
   const handleValue = () => {
     var optionSelect = document.getElementById("FormSelect");
     var text = optionSelect.options[optionSelect.selectedIndex].text;
-    cambiarEstado(id,text);
+    cambiarEstado(id, text);
   };
 
   return (
     <div
-    className="card m-4"
+      className="card m-4"
       style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
     >
       <div
@@ -65,7 +65,7 @@ function CardReclamo({
         >
           <button
             type="button"
-            class="btn btn-outline-secondary btn-sm m-2 w-100"
+            className="btn btn-outline-secondary btn-sm m-2 w-100"
             style={{ color: "var(--bs-dropdown-link-color)" }}
             onClick={handleShow}
           >
@@ -78,21 +78,21 @@ function CardReclamo({
       <Modal
         show={show}
         onHide={handleClose}
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <Modal.Header closeButton class="modal-header">
-          <Modal.Title class="modal-title fs-5" id="exampleModalLabel">
+        <Modal.Header closeButton className="modal-header">
+          <Modal.Title className="modal-title fs-5" id="exampleModalLabel">
             Por cuál estado desea cambiarlo?
           </Modal.Title>
         </Modal.Header>
-        {/* <Modal.Body class="modal-body">
+        {/* <Modal.Body className="modal-body">
                     Esta acción no se puede deshacer
                 </Modal.Body> */}
-        <Modal.Footer class="modal-footer">
+        <Modal.Footer className="modal-footer">
           <Form.Select id="FormSelect" aria-label="Default select example">
             <option>Estados</option>{" "}
             {/* No deberia dejar que el usuario lo use */}
@@ -108,7 +108,7 @@ function CardReclamo({
               handleClose();
             }}
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             data-bs-dismiss="modal"
           >
             {" "}
@@ -117,7 +117,7 @@ function CardReclamo({
           <button
             onClick={handleClose}
             type="button"
-            class="btn"
+            className="btn"
             data-bs-dismiss="modal"
             style={{ borderColor: "#519657", color: "#519657" }}
           >

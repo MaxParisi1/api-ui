@@ -5,6 +5,8 @@ export class Home extends Component {
     return (
       <div className="homepage">
         <div className="mt-4" style={{ justifyContent: "space-between" }}>
+          <div style={{ textAlignLast: "center" }}></div>
+
           <div
             className="card mb-3 align-self-center"
             style={{ maxWidth: "540px" }}

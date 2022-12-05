@@ -7,17 +7,15 @@ const NavigationAdmin = () => {
   return (
     <>
       <div className=" text-center p-1" style={{ display: "contents" }}>
-        <button type="button" className="btn btn-outline-dark btn-sm mx-1">
-          <Link to="/" className="text-decoration-none">
-            <a
-              className="text-decoration-none text-dark"
-              href="../../index.html"
-              style={{ color: "var(--bs-dropdown-link-color)" }}
-            >
-              Home
-            </a>
-          </Link>
-        </button>
+        <Link to="/" className="text-decoration-none">
+          <button
+            type="button"
+            className="btn btn-outline-dark btn-sm mx-1"
+            style={{ backgroundColor: "transparent" }}
+          >
+            Home
+          </button>
+        </Link>
 
         {/* Reclamos */}
 

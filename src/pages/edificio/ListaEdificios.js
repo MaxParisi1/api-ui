@@ -12,7 +12,6 @@ function ListaEdificios() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  
   useEffect(() => {
     servicioEdificio.getAllEdificios().then((response) => {
       setEdificios(response);
@@ -28,26 +27,19 @@ function ListaEdificios() {
         );
       })
       .catch(function (error) {
-        console.log(error.response.data); //No se puede eliminar un edificio si tiene unidades
+        //No se puede eliminar un edificio si tiene unidades
         alert(error.response.data);
       });
   };
 
   const crearEdificio = (edificio) => {
-    servicioEdificio.createEdificio(edificio)
-    .then((response) => {console.log(`Edificio creado con id ${response}`);});
-  }
+    servicioEdificio.createEdificio(edificio);
+  };
 
   const modificarEdificio = (codigo, datos) => {
-    servicioEdificio
-      .updateEdificio(codigo, datos)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error.response.data);
-        alert(error.response.data);
-      });
+    servicioEdificio.updateEdificio(codigo, datos).catch(function (error) {
+      alert(error.response.data);
+    });
   };
 
   return (
@@ -72,7 +64,6 @@ function ListaEdificios() {
         crearEdificio={crearEdificio}
       />
     </div>
-    
   );
 }
 

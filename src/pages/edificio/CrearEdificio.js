@@ -16,8 +16,7 @@ function CrearEdificio() {
   };
 
   function guardarEdificio() {
-    servicioEdificio.createEdificio(edificio)
-    .then((response) => {console.log(`Edificio creado con id ${response}`);});
+    servicioEdificio.createEdificio(edificio);
   }
 
   return (

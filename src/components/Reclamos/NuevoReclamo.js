@@ -137,8 +137,9 @@ function NuevoReclamo() {
       </Breadcrumb>
       {edificioView && (
         <ContainerCards titulo="Seleccionar Edificio">
-          {edificios.map((edificio) => (
+          {edificios.map((edificio, index) => (
             <Card
+              index={index}
               id={edificio.codigo}
               nombre={edificio.nombre}
               cuerpo={`Dirección: ${edificio.direccion}`}
@@ -172,9 +173,9 @@ function NuevoReclamo() {
       )}
       {reclamosComunView && (
         <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-          {reclamosComunes?.map((reclamo) => (
+          {reclamosComunes?.map((reclamo, index) => (
             <ReclamoCard
-              key={reclamo.idReclamo}
+              index={index}
               id={reclamo.idReclamo}
               edificio={`Edificio: ${
                 edificios.find((edificio) => edificio.codigo == reclamo.codigo)
@@ -183,6 +184,7 @@ function NuevoReclamo() {
               ubicacion={`Ubicacion: ${reclamo.ubicacion}`}
               descripcion={`Descripcion: ${reclamo.descripcion}`}
               estado={`Estado: ${reclamo.estado}`}
+              image={reclamo?.imagenes?.[0]?.path}
             />
           ))}
         </div>
@@ -201,24 +203,36 @@ function NuevoReclamo() {
       {unidadesView && (
         <div
           className="w-100 w-md-50"
-          style={{ textAlignLast: "left", marginTop: "3%", marginBottom: "4%" }}
+          style={{
+            textAlignLast: "left",
+            marginTop: "3%",
+            marginBottom: "4%",
+            textAlignLast: "center",
+          }}
         >
-          <NormalButton
-            onClickFuncion={() => {
+          <button
+            className="btn btn-outline-light btn-sm m-2"
+            style={{
+              color: "var(--bs-dropdown-link-color)",
+              border: "solid 1px #519657",
+            }}
+            onClick={() => {
               setReclamosComunView(true);
               setUnidadesView(false);
               fetchDataReclamosComunes(codigoEdificioActual);
             }}
-            accion={"Reclamos Comunes"}
-          />
+          >
+            Ver Reclamos Comunes
+          </button>
         </div>
       )}
       {unidadesView && (
         <ContainerCards titulo="Seleccionar Unidad">
           {unidades
             .filter((unidad) => unidad.codigoEdificio == codigoEdificioActual)
-            .map((unidad) => (
+            .map((unidad, index) => (
               <Card
+                index={index}
                 id={unidad.identificador}
                 nombre={`Piso ${unidad.piso} Nº ${unidad.numero}`}
                 cuerpo={`Edificio: ${
@@ -253,24 +267,24 @@ function NuevoReclamo() {
           </div>
 
           <div style={{ textAlignLast: "left" }}>
-            <NormalButton accion={"Ver todos mis reclamos"}>
-              <Link to="/reclamos" className="text-decoration-none">
+            <Link to="/reclamos" className="text-decoration-none">
+              <NormalButton accion={"Ver todos mis reclamos"}>
                 <a
                   className="text-decoration-none text-dark"
                   style={{ color: "var(--bs-dropdown-link-color)" }}
                 >
                   Ver todos mis reclamos
                 </a>
-              </Link>
-            </NormalButton>
+              </NormalButton>
+            </Link>
           </div>
         </div>
       )}
       {reclamosView && reclamos && (
         <div className="row row-cols-1 row-cols-md-2 g-4 justify-content-center">
-          {reclamos.map((reclamo) => (
+          {reclamos.map((reclamo, index) => (
             <ReclamoCard
-              key={reclamo.idReclamo}
+              index={index}
               id={reclamo.idReclamo}
               edificio={`Edificio: ${
                 edificios.find((edificio) => edificio.codigo == reclamo.codigo)
@@ -288,6 +302,7 @@ function NuevoReclamo() {
                 )?.numero
               }`}
               estado={`Estado: ${reclamo.estado}`}
+              image={reclamo?.imagenes?.[0]?.path}
             />
           ))}
         </div>

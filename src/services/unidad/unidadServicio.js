@@ -47,9 +47,6 @@ const liberarUnidad = (codigo, piso, numero) => {
 };
 
 const transferirUnidad = (codigo, piso, numero, documento) => {
-  console.log(
-    `${baseUrl}/transferir?codigo=${codigo}&piso=${piso}&numero=${numero}&documento=${documento}`
-  );
   const request = axios.put(
     `${baseUrl}/transferir?codigo=${codigo}&piso=${piso}&numero=${numero}&documento=${documento}`
   );

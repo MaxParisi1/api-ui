@@ -29,18 +29,13 @@ function UnidadesEdificio() {
   }, [unidades]);
 
   const crearUnidad = (unidadNueva) => {
-    console.log(unidadNueva);
     unidadNueva.codigoEdificio = codigo;
-    unidadServicio.createUnidad(unidadNueva).then((response) => {
-      console.log(response);
-    });
+    unidadServicio.createUnidad(unidadNueva);
   };
 
   const modificarUnidad = (identificador, unidad) => {
     /*no existe el endpoint */
-    unidadServicio.updateUnidad(identificador, unidad).then((response) => {
-      console.log(response);
-    });
+    unidadServicio.updateUnidad(identificador, unidad);
   };
 
   const eliminarUnidad = (identificador) => {
@@ -80,7 +75,7 @@ function UnidadesEdificio() {
                 <i className="bi bi-funnel"></i>
                 Filtrar por Habitado:{" "}
                 <i
-                  class="bi bi-chevron-down"
+                  className="bi bi-chevron-down"
                   style={{ verticalAlign: "middle", marginRight: "10px" }}
                 ></i>
               </h4>

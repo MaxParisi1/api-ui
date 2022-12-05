@@ -60,7 +60,6 @@ function ModalAlquilarUnidad({
           <Button
             variant="primary"
             onClick={() => {
-              console.log(datos.documento);
               alquilarUnidad(codigo, piso, numero, datos.documento);
               onHide();
             }}

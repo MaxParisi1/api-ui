@@ -8,7 +8,6 @@ const getReclamoEstado = (estado) => {
 };
 
 const getReclamoEstadoCompleto = (estado) => {
-  console.log(estado)
   const request = axios.get(`${baseUrl}/estadoCompleto?estado=${estado}`);
   return request.then((response) => response.data);
 };

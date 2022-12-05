@@ -91,7 +91,7 @@ const Reclamos = () => {
                 <i className="bi bi-funnel"></i>
                 Filtrar por estado:{" "}
                 <i
-                  class="bi bi-chevron-down"
+                  className="bi bi-chevron-down"
                   style={{ verticalAlign: "middle", marginRight: "2px" }}
                 ></i>
               </h4>
@@ -107,26 +107,28 @@ const Reclamos = () => {
         {estado && reclamos
           ? reclamos
               .filter((reclamo) => reclamo.estado === estado)
-              ?.map((reclamo) => (
+              ?.map((reclamo, index) => (
                 <ReclamoCard
-                  key={reclamo?.idReclamo}
+                  key={index}
                   id={reclamo?.idReclamo}
                   edificio={`Edificio: ${reclamo?.codigo.nombre}`}
                   ubicacion={`Ubicacion: ${reclamo?.ubicacion}`}
                   descripcion={`Descripcion: ${reclamo?.descripcion}`}
                   identificador={`Piso ${reclamo?.identificador?.piso} Nº ${reclamo?.identificador?.numero}`}
                   estado={`Estado: ${reclamo?.estado}`}
+                  image={reclamo?.imagenes?.[0]?.path}
                 />
               ))
-          : reclamos?.map((reclamo) => (
+          : reclamos?.map((reclamo, index) => (
               <ReclamoCard
-                key={reclamo?.idReclamo}
+                key={index}
                 id={reclamo?.idReclamo}
                 edificio={`Edificio: ${reclamo?.codigo?.nombre}`}
                 ubicacion={`Ubicacion: ${reclamo?.ubicacion}`}
                 descripcion={`Descripcion: ${reclamo?.descripcion}`}
                 identificador={`Piso ${reclamo?.identificador?.piso} Nº ${reclamo?.identificador?.numero}`}
                 estado={`Estado: ${reclamo?.estado}`}
+                image={reclamo?.imagenes?.[0]?.path}
               />
             ))}
       </div>

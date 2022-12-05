@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
@@ -12,7 +12,6 @@ function ModalTransferirUnidad({
   numero,
 }) {
   const [datos, setDatos] = useState([]);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -61,8 +60,7 @@ function ModalTransferirUnidad({
           <Button
             variant="primary"
             onClick={() => {
-              console.log(datos.documento)
-              transferirUnidad(codigo, piso, numero,datos.documento);
+              transferirUnidad(codigo, piso, numero, datos.documento);
               onHide();
             }}
           >

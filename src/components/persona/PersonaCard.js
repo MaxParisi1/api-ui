@@ -17,17 +17,19 @@ function PersonaCard({ persona, eliminarPersona, modificarPersona }) {
     <>
       <div
         key={persona.documento}
-        class="card mb-3 m-4"
+        className="card mb-3 m-4"
         style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
       >
-        <div class="card-header" style={{ borderBottom: "solid 1px #519657" }}>{`Documento : ${persona.documento}`}</div>
-        <div class="card-body">
-          <p class="card-text">{`Nombre : ${persona.nombre}`}</p>
+        <div
+          className="card-header"
+          style={{ borderBottom: "solid 1px #519657" }}
+        >{`Documento : ${persona.documento}`}</div>
+        <div className="card-body">
+          <p className="card-text">{`Nombre : ${persona.nombre}`}</p>
         </div>
 
         {/* MODIFICAR PERSONA */}
         <NormalButton onClickFuncion={handleShowEditar} accion="Editar" />
-
 
         {/* ELIMINAR PERSONA */}
         <NormalButton onClickFuncion={handleShow} accion="Eliminar" />
@@ -37,25 +39,25 @@ function PersonaCard({ persona, eliminarPersona, modificarPersona }) {
       <Modal
         show={show}
         onHide={handleClose}
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <Modal.Header closeButton class="modal-header">
-          <Modal.Title class="modal-title fs-5" id="exampleModalLabel">
+        <Modal.Header closeButton className="modal-header">
+          <Modal.Title className="modal-title fs-5" id="exampleModalLabel">
             Seguro que desea eliminar esta Persona?
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body class="modal-body">
+        <Modal.Body className="modal-body">
           Esta acción no se puede deshacer
         </Modal.Body>
-        <Modal.Footer class="modal-footer">
+        <Modal.Footer className="modal-footer">
           <button
             onClick={() => eliminarPersona(persona.documento)}
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             data-bs-dismiss="modal"
           >
             Eliminar
@@ -63,7 +65,7 @@ function PersonaCard({ persona, eliminarPersona, modificarPersona }) {
           <button
             onClick={handleClose}
             type="button"
-            class="btn btn-primary"
+            className="btn btn-primary"
             data-bs-dismiss="modal"
           >
             {" "}

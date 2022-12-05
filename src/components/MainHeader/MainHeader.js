@@ -43,25 +43,25 @@ const MainHeader = () => {
         <Modal
           show={show}
           onHide={handleClose}
-          class="modal fade"
+          className="modal fade"
           id="exampleModal"
-          tabindex="-1"
+          tabIndex="-1"
           aria-labelledby="exampleModalLabel"
           aria-hidden="true"
         >
-          <Modal.Header closeButton class="modal-header">
-            <Modal.Title class="modal-title fs-5" id="exampleModalLabel">
+          <Modal.Header closeButton className="modal-header">
+            <Modal.Title className="modal-title fs-5" id="exampleModalLabel">
               Desea cerrar sesión?
             </Modal.Title>
           </Modal.Header>
-          <Modal.Footer class="modal-footer">
+          <Modal.Footer className="modal-footer">
             <button
               onClick={() => {
                 ctx.onLogout();
                 handleClose();
               }}
               type="button"
-              class="btn btn-outline-secondary"
+              className="btn btn-outline-secondary"
               data-bs-dismiss="modal"
             >
               Cerrar sesión
@@ -69,7 +69,7 @@ const MainHeader = () => {
             <button
               onClick={handleClose}
               type="button"
-              class="btn btn-secondary"
+              className="btn btn-secondary"
               data-bs-dismiss="modal"
             >
               {" "}

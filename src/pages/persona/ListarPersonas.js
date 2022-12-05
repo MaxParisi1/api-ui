@@ -9,8 +9,8 @@ import ModalTransferirUnidad from "../../components/unidad/ModalTransferirUnidad
 import ModalAlquilarUnidad from "../../components/unidad/ModalAlquilarUnidad";
 import ModalControlUnidad from "../../components/unidad/ModalControlUnidad";
 
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function ListarPersonas() {
   const { codigo, piso, numero, identificador } = useParams();
@@ -64,35 +64,26 @@ function ListarPersonas() {
   };
 
   const modificarPersona = (documento, persona) => {
-    personaServicio.updatePersona(documento, persona).then((response) => {
-      console.log(response);
-    });
+    personaServicio.updatePersona(documento, persona);
   };
 
   const liberarUnidad = (codigo, piso, numero) => {
     unidadServicio.liberarUnidad(codigo, piso, numero).then((response) => {
-      console.log(response);
       window.location.reload();
     });
   };
 
   const transferirUnidad = (codigo, piso, numero, documento) => {
-    unidadServicio
-      .transferirUnidad(codigo, piso, numero, documento)
-      .then((response) => {
-        console.log(response);
-      });
+    unidadServicio.transferirUnidad(codigo, piso, numero, documento);
   };
 
   const alquilarUnidad = (codigo, piso, numero, documento) => {
     unidadServicio
       .alquilarUnidad(codigo, piso, numero, documento)
       .then((response) => {
-        console.log(response);
         window.location.reload();
       })
-      .catch(function(error) {
-        console.log(error.response.data);
+      .catch(function (error) {
         alert(error.response.data);
       });
   };
@@ -100,11 +91,7 @@ function ListarPersonas() {
   const agregarDuenioUnidad = (codigo, piso, numero, documento) => {
     unidadServicio
       .agregarDuenioUnidad(codigo, piso, numero, documento)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error.response.data);
+      .catch(function (error) {
         alert(error.response.data);
       });
   };
@@ -112,11 +99,7 @@ function ListarPersonas() {
   const agregarInquilinoUnidad = (codigo, piso, numero, documento) => {
     unidadServicio
       .agregarInquilinoUnidad(codigo, piso, numero, documento)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error.response.data);
+      .catch(function (error) {
         alert(error.response.data);
       });
   };
@@ -124,33 +107,58 @@ function ListarPersonas() {
   return (
     <div>
       <h2 className="mt-4 ml-5">Detalle de la unidad</h2>
-      <div className="container-sm p-5 mt-5"
-      style={{ maxWidth: "760px", border: "solid 2px #519657" }}
+      <div
+        className="container-sm p-5 mt-5"
+        style={{ maxWidth: "760px", border: "solid 2px #519657" }}
       >
         <div className="d-flex=row">
           <Row className="d-flex ">
-
             <Col>
-              <h6 className="d-flex" style={{marginBottom: "7%" }}>Eliminar todos los inquilinos de una unidad: </h6>
-              <h6 className="d-flex"  style={{marginBottom: "8%" }}>Transfiere la propiedad de una unidad: </h6>
-              <h6 className="d-flex" style={{marginBottom: "8%" }}>Alquilar una unidad vacia:</h6>
-              <h6 className="d-flex" style={{marginBottom: "8%" }}>Agregar otro duenio a una unidad:</h6>
-              <h6 className="d-flex" style={{marginBottom: "8%" }}>Agregar otro inquilino a una unidad:</h6>
+              <h6 className="d-flex" style={{ marginBottom: "7%" }}>
+                Eliminar todos los inquilinos de una unidad:{" "}
+              </h6>
+              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+                Transfiere la propiedad de una unidad:{" "}
+              </h6>
+              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+                Alquilar una unidad vacia:
+              </h6>
+              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+                Agregar otro duenio a una unidad:
+              </h6>
+              <h6 className="d-flex" style={{ marginBottom: "8%" }}>
+                Agregar otro inquilino a una unidad:
+              </h6>
             </Col>
 
             <Col>
-              <NormalButton onClickFuncion={handleShowLiberar} accion="Liberar" style={{width:"auto"}}/>
-              <NormalButton onClickFuncion={handleShowTransferir} accion="Transferir" style={{textAlign: "end"}} />
-              <NormalButton onClickFuncion={handleShowAlquilar} accion="Alquilar"/>
-              <NormalButton onClickFuncion={handleShowAgregarDuenio} accion="Agregar Duenio"/>
-              <NormalButton onClickFuncion={handleShowAgregarInquilino}accion="Agregar Inquilino"/>
+              <NormalButton
+                onClickFuncion={handleShowLiberar}
+                accion="Liberar"
+                style={{ width: "auto" }}
+              />
+              <NormalButton
+                onClickFuncion={handleShowTransferir}
+                accion="Transferir"
+                style={{ textAlign: "end" }}
+              />
+              <NormalButton
+                onClickFuncion={handleShowAlquilar}
+                accion="Alquilar"
+              />
+              <NormalButton
+                onClickFuncion={handleShowAgregarDuenio}
+                accion="Agregar Duenio"
+              />
+              <NormalButton
+                onClickFuncion={handleShowAgregarInquilino}
+                accion="Agregar Inquilino"
+              />
             </Col>
-
           </Row>
-          
+
           <h3>Dueños:</h3>
           <div className="row row-cols-1 row-cols-md-2">
-            
             {duenios.map((duenio) => (
               <PersonaCard
                 persona={duenio}
@@ -163,7 +171,6 @@ function ListarPersonas() {
           <h3>Inquilino:</h3>
 
           <div className="row row-cols-1 row-cols-md-2">
-            
             {/* cuidado en api el endpoint inquilino llama a duenios y no inquilino,modificar */}
             ,
             {inquilinos.map((inquilino) => (

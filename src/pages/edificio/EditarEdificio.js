@@ -21,8 +21,7 @@ function EditarEdificio() {
   };
 
   const editarEdificio = () => {
-    servicioEdificio.updateEdificio(edificio.codigo,edificio)
-    .then((response) => {console.log(response);});
+    servicioEdificio.updateEdificio(edificio.codigo, edificio);
   };
 
   return (

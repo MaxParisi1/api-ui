@@ -4,7 +4,13 @@ import Modal from "react-bootstrap/Modal";
 import NormalButton from "../Utils/NormalButton";
 import ModalEditarEdificio from "./ModalEditarEdificio";
 
-function CardEdificio({ codigo, nombre, direccion, eliminarEdificio,modificarEdificio }) {
+function CardEdificio({
+  codigo,
+  nombre,
+  direccion,
+  eliminarEdificio,
+  modificarEdificio,
+}) {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -17,15 +23,18 @@ function CardEdificio({ codigo, nombre, direccion, eliminarEdificio,modificarEdi
   return (
     <div
       key={codigo}
-      class="card mb-3 m-4"
+      className="card mb-3 m-4"
       style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
     >
-      <div class="card-header" style={{ borderBottom: "solid 1px #519657" }}>
+      <div
+        className="card-header"
+        style={{ borderBottom: "solid 1px #519657" }}
+      >
         {" "}
         {nombre}
       </div>
-      <div class="card-body">
-        <p class="card-text">{`Direccion : ${direccion}`}</p>
+      <div className="card-body">
+        <p className="card-text">{`Direccion : ${direccion}`}</p>
       </div>
 
       <LinkButton path={`/edificio/${codigo}/unidad`} action="Unidades" />
@@ -37,25 +46,25 @@ function CardEdificio({ codigo, nombre, direccion, eliminarEdificio,modificarEdi
       <Modal
         show={show}
         onHide={handleClose}
-        class="modal fade"
+        className="modal fade"
         id="exampleModal"
-        tabindex="-1"
+        tabIndex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <Modal.Header closeButton class="modal-header">
-          <Modal.Title class="modal-title fs-5" id="exampleModalLabel">
+        <Modal.Header closeButton className="modal-header">
+          <Modal.Title className="modal-title fs-5" id="exampleModalLabel">
             Seguro que desea eliminar el edificio?
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body class="modal-body">
+        <Modal.Body className="modal-body">
           Esta acción no se puede deshacer
         </Modal.Body>
-        <Modal.Footer class="modal-footer">
+        <Modal.Footer className="modal-footer">
           <button
             onClick={() => eliminarEdificio(codigo)}
             type="button"
-            class="btn btn-secondary"
+            className="btn btn-secondary"
             data-bs-dismiss="modal"
           >
             Eliminar
@@ -63,7 +72,7 @@ function CardEdificio({ codigo, nombre, direccion, eliminarEdificio,modificarEdi
           <button
             onClick={handleClose}
             type="button"
-            class="btn"
+            className="btn"
             data-bs-dismiss="modal"
           >
             {" "}

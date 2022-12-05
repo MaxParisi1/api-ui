@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import NormalButton from "../Utils/NormalButton";
+import Modal from "react-bootstrap/Modal";
 
 const ReclamoCard = (props) => {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <div
       className="card m-4"
       style={{ maxWidth: "18rem", border: "solid 2px #519657" }}
+      key={props.index}
     >
       <div
         className="card-header"
@@ -29,6 +36,46 @@ const ReclamoCard = (props) => {
       <div className="card-body">
         <p className="card-text">{props.estado}</p>
       </div>
+
+      {props.image && (
+        <>
+          <button
+            type="button"
+            className="btn btn-outline-light btn-sm m-2"
+            style={{
+              color: "var(--bs-dropdown-link-color)",
+              border: "solid 1px #519657",
+            }}
+            onClick={handleShow}
+          >
+            Ver imagenes
+          </button>
+
+          <Modal
+            show={show}
+            onHide={handleClose}
+            className="modal fade"
+            id="exampleModal"
+            tabIndex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <Modal.Header closeButton className="modal-header">
+              <Modal.Title className="modal-title fs-5" id="exampleModalLabel">
+                Imagenes del reclamo
+              </Modal.Title>
+            </Modal.Header>
+            <Modal.Body
+              style={{ display: "inline-grid", justifyItems: "center" }}
+            >
+              <img
+                style={{ paddingBottom: "10px", width: "300px" }}
+                src={props.image}
+              ></img>
+            </Modal.Body>
+          </Modal>
+        </>
+      )}
     </div>
   );
 };
